@@ -29,7 +29,7 @@ Installation
 Use go get 
 
 ```shell
-go get github.com/go-playground/locales
+go get github.com/nicola-spb/locales
 ```  
 
 NOTES
@@ -46,8 +46,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/go-playground/locales/currency"
-	"github.com/go-playground/locales/en_CA"
+	"github.com/nicola-spb/locales/currency"
+	"github.com/nicola-spb/locales/en_CA"
 )
 
 func main() {

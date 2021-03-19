@@ -1,10 +1,10 @@
 package locales
 
 import (
+	"github.com/nicola-spb/locales/currency"
 	"strconv"
 	"time"
 
-	"github.com/go-playground/locales/currency"
 )
 
 // // ErrBadNumberValue is returned when the number passed for

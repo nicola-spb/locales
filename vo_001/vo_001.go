@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/go-playground/locales"
-	"github.com/go-playground/locales/currency"
+	"locales"
+	"locales/currency"
 )
 
 type vo_001 struct {

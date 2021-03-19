@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/go-playground/locales"
-	"github.com/go-playground/locales/currency"
+	"github.com/nicola-spb/locales"
+	"github.com/nicola-spb/locales/currency"
 )
 
 type su_Latn struct {
@@ -59,7 +59,7 @@ func New() locales.Translator {
 		erasAbbreviated:   []string{"SM", "M"},
 		erasNarrow:        []string{"", ""},
 		erasWide:          []string{"", ""},
-		timezones:         map[string]string{"ACDT": "ACDT", "ACST": "ACST", "ACWDT": "ACWDT", "ACWST": "ACWST", "ADT": "Waktu Usum Panas Atlantik", "AEDT": "AEDT", "AEST": "AEST", "AKDT": "AKDT", "AKST": "AKST", "ARST": "ARST", "ART": "ART", "AST": "Waktu Standar Atlantik", "AWDT": "AWDT", "AWST": "AWST", "BOT": "BOT", "BT": "BT", "CAT": "CAT", "CDT": "Waktu Usum Panas Tengah", "CHADT": "CHADT", "CHAST": "CHAST", "CLST": "CLST", "CLT": "CLT", "COST": "Waktu Usum Panas Kolombia", "COT": "Waktu Standar Kolombia", "CST": "Waktu Standar Tengah", "ChST": "ChST", "EAT": "EAT", "ECT": "ECT", "EDT": "Waktu Usum Panas Wétan", "EST": "Waktu Standar Wétan", "GFT": "GFT", "GMT": "Waktu Greenwich", "GST": "GST", "GYT": "GYT", "HADT": "HADT", "HAST": "HAST", "HAT": "HAT", "HECU": "HECU", "HEEG": "HEEG", "HENOMX": "HENOMX", "HEOG": "HEOG", "HEPM": "HEPM", "HEPMX": "HEPMX", "HKST": "HKST", "HKT": "HKT", "HNCU": "HNCU", "HNEG": "HNEG", "HNNOMX": "HNNOMX", "HNOG": "HNOG", "HNPM": "HNPM", "HNPMX": "HNPMX", "HNT": "HNT", "IST": "IST", "JDT": "JDT", "JST": "JST", "LHDT": "LHDT", "LHST": "LHST", "MDT": "MDT", "MESZ": "Waktu Usum Panas Éropa Tengah", "MEZ": "Waktu Standar Éropa Tengah", "MST": "MST", "MYT": "MYT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "Waktu Usum Panas Éropa Timur", "OEZ": "Waktu Standar Éropa Timur", "PDT": "Waktu Usum Panas Pasifik", "PST": "Waktu Standar Pasifik", "SAST": "SAST", "SGT": "SGT", "SRT": "SRT", "TMST": "TMST", "TMT": "TMT", "UYST": "UYST", "UYT": "UYT", "VET": "VET", "WARST": "WARST", "WART": "WART", "WAST": "WAST", "WAT": "WAT", "WESZ": "Waktu Usum Panas Éropa Barat", "WEZ": "Waktu Standar Éropa Barat", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "∅∅∅": "∅∅∅"},
+		timezones:         map[string]string{"ACDT": "ACDT", "ACST": "ACST", "ACWDT": "ACWDT", "ACWST": "ACWST", "ADT": "Waktu Usum Panas Atlantik", "AEDT": "AEDT", "AEST": "AEST", "AKDT": "AKDT", "AKST": "AKST", "ARST": "ARST", "ART": "ART", "AST": "Waktu Standar Atlantik", "AWDT": "AWDT", "AWST": "AWST", "BOT": "BOT", "BT": "BT", "CAT": "CAT", "CDT": "Waktu Usum Panas Tengah", "CHADT": "CHADT", "CHAST": "CHAST", "CLST": "CLST", "CLT": "CLT", "COST": "Waktu Usum Panas Kolombia", "COT": "Waktu Standar Kolombia", "CST": "Waktu Standar Tengah", "ChST": "ChST", "EAT": "EAT", "ECT": "ECT", "EDT": "Waktu Usum Panas Wétan", "EST": "Waktu Standar Wétan", "GFT": "GFT", "GMT": "Waktu Greenwich", "GST": "GST", "GYT": "GYT", "HADT": "HADT", "HAST": "HAST", "HAT": "HAT", "HECU": "HECU", "HEEG": "HEEG", "HENOMX": "HENOMX", "HEOG": "HEOG", "HEPM": "HEPM", "HEPMX": "HEPMX", "HKST": "HKST", "HKT": "HKT", "HNCU": "HNCU", "HNEG": "HNEG", "HNNOMX": "HNNOMX", "HNOG": "HNOG", "HNPM": "HNPM", "HNPMX": "HNPMX", "HNT": "HNT", "IST": "IST", "JDT": "JDT", "JST": "JST", "LHDT": "LHDT", "LHST": "LHST", "MDT": "Waktu Usum Panas Pagunungan", "MESZ": "Waktu Usum Panas Éropa Tengah", "MEZ": "Waktu Standar Éropa Tengah", "MST": "Waktu Standar Pagunungan", "MYT": "MYT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "Waktu Usum Panas Éropa Timur", "OEZ": "Waktu Standar Éropa Timur", "PDT": "Waktu Usum Panas Pasifik", "PST": "Waktu Standar Pasifik", "SAST": "SAST", "SGT": "SGT", "SRT": "SRT", "TMST": "TMST", "TMT": "TMT", "UYST": "UYST", "UYT": "UYT", "VET": "VET", "WARST": "WARST", "WART": "WART", "WAST": "WAST", "WAT": "WAT", "WESZ": "Waktu Usum Panas Éropa Barat", "WEZ": "Waktu Standar Éropa Barat", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "∅∅∅": "∅∅∅"},
 	}
 }
 
