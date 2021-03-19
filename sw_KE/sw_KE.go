@@ -22,8 +22,8 @@ type sw_KE struct {
 	timeSeparator          string
 	inifinity              string
 	currencies             []string // idx = enum of currency code
+	currencyPositivePrefix string
 	currencyNegativePrefix string
-	currencyNegativeSuffix string
 	monthsAbbreviated      []string
 	monthsNarrow           []string
 	monthsWide             []string
@@ -55,9 +55,9 @@ func New() locales.Translator {
 		perMille:               "‰",
 		timeSeparator:          ":",
 		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		currencyNegativePrefix: "(",
-		currencyNegativeSuffix: ")",
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "$", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencyPositivePrefix: " M",
+		currencyNegativePrefix: " M",
 		monthsAbbreviated:      []string{"", "Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ago", "Sep", "Okt", "Nov", "Des"},
 		monthsNarrow:           []string{"", "J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"},
 		monthsWide:             []string{"", "Januari", "Februari", "Machi", "Aprili", "Mei", "Juni", "Julai", "Agosti", "Septemba", "Oktoba", "Novemba", "Desemba"},
@@ -66,12 +66,12 @@ func New() locales.Translator {
 		daysShort:              []string{"Jumapili", "Jumatatu", "Jumanne", "Jumatano", "Alhamisi", "Ijumaa", "Jumamosi"},
 		daysWide:               []string{"Jumapili", "Jumatatu", "Jumanne", "Jumatano", "Alhamisi", "Ijumaa", "Jumamosi"},
 		periodsAbbreviated:     []string{"AM", "PM"},
-		periodsNarrow:          []string{"AM", "PM"},
+		periodsNarrow:          []string{"am", "pm"},
 		periodsWide:            []string{"AM", "PM"},
 		erasAbbreviated:        []string{"KK", "BK"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"Kabla ya Kristo", "Baada ya Kristo"},
-		timezones:              map[string]string{"ACST": "Saa Wastani za Australia ya Kati", "AWST": "Saa Wastani za Australia Magharibi", "TMST": "Saa za Majira ya joto za Turkmenistan", "WITA": "Saa za Indonesia ya Kati", "AEDT": "Saa za Mchana za Mashariki mwa Australia", "HKST": "Saa za Majira ya joto za Hong Kong", "GFT": "Saa za Guiana ya Ufaransa", "AKST": "Saa za Wastani za Alaska", "AWDT": "Saa za Mchana za Australia Magharibi", "NZST": "Saa Wastani za New Zealand", "TMT": "Saa za Wastani za Turkmenistan", "IST": "Saa Wastani za India", "AST": "Saa za Wastani za Atlantiki", "CAT": "Saa za Afrika ya Kati", "HECU": "Saa za Mchana za Cuba", "NZDT": "Saa za Mchana za New Zealand", "OESZ": "Saa za Majira ya joto za Mashariki mwa Ulaya", "HKT": "Saa Wastani za Hong Kong", "GMT": "Saa za Greenwich", "HEEG": "Saa za Majira ya joto za Greenland Mashariki", "CLT": "Saa za Wastani za Chile", "COT": "Saa za Wastani za Colombia", "CHAST": "Saa Wastani za Chatham", "WIT": "Saa za Mashariki mwa Indonesia", "HAST": "Saa za Wastani za Hawaii-Aleutian", "WARST": "Saa za Majira ya joto za Magharibi mwa Argentina", "CLST": "Saa za Majira ya joto za Chile", "COST": "Saa za Majira ya joto za Colombia", "EST": "Saa za Wastani za Mashariki", "HEPM": "Saa za Mchana za Saint-Pierre na Miquelon", "HNT": "Saa za Wastani za Newfoundland", "EDT": "Saa za Mchana za Mashariki", "CHADT": "Saa za Mchana za Chatham", "MEZ": "Saa Wastani za Ulaya ya kati", "MESZ": "Saa za Majira ya joto za Ulaya ya Kati", "LHDT": "Saa za Mchana za Lord Howe", "AEST": "Saa Wastani za Mashariki mwa Australia", "JST": "Saa Wastani za Japan", "JDT": "Saa za Mchana za Japan", "GYT": "Saa za Guyana", "ChST": "Saa Wastani za Chamorro", "HNCU": "Saa za Wastani ya Cuba", "BT": "Saa za Bhutan", "CST": "Saa za Wastani za Kati", "UYST": "Saa za Majira ya joto za Uruguay", "HNEG": "Saa za Wastani za Greenland Mashariki", "HEPMX": "Saa za mchana za pasifiki za Mexico", "PDT": "Saa za Mchana za Pasifiki", "SRT": "Saa za Suriname", "ACWDT": "Saa za Mchana za Magharibi ya Kati ya Australia", "WART": "Saa Wastani za Magharibi mwa Argentina", "SAST": "Saa Wastani za Afrika Kusini", "ECT": "Saa za Ecuador", "MST": "MST", "MDT": "MDT", "ADT": "Saa za Mchana za Atlantiki", "ART": "Saa za Wastani za Argentina", "SGT": "Saa Wastani za Singapore", "HNPMX": "Saa za wastani za pasifiki za Mexico", "PST": "Saa za Wastani za Pasifiki", "CDT": "Saa za Mchana za Kati", "HNNOMX": "Saa Wastani za Mexico Kaskazini Magharibi", "HAT": "Saa za Mchana za Newfoundland", "ACDT": "Saa za Mchana za Australia ya Kati", "HADT": "Saa za Mchana za Hawaii-Aleutian", "HENOMX": "Saa za mchana za Mexico Kaskazini Magharibi", "∅∅∅": "Saa za Majira ya joto za Amazon", "WESZ": "Saa za Majira ya joto za Magharibi mwa Ulaya", "HNPM": "Saa za Wastani ya Saint-Pierre na Miquelon", "ACWST": "Saa Wastani za Magharibi ya Kati ya Australia", "AKDT": "Saa za Mchana za Alaska", "OEZ": "Saa Wastani za Mashariki mwa Ulaya", "VET": "Saa za Venezuela", "HEOG": "Saa za Majira ya joto za Greenland Magharibi", "WIB": "Saa za Magharibi mwa Indonesia", "LHST": "Saa Wastani za Lord Howe", "ARST": "Saa za Majira ya joto za Argentina", "HNOG": "Saa za Wastani za Greenland Magharibi", "WAT": "Saa za Wastani za Afrika Magharibi", "WAST": "Saa za Majira ya joto za Afrika Magharibi", "WEZ": "Saa Wastani za Magharibi mwa Ulaya", "BOT": "Saa za Bolivia", "MYT": "Saa za Malaysia", "UYT": "Saa za Wastani za Uruguay", "EAT": "Saa za Afrika Mashariki"},
+		timezones:              map[string]string{"ACDT": "Saa za Mchana za Australia ya Kati", "ACST": "Saa za Wastani za Australia ya Kati", "ACWDT": "Saa za Mchana za Magharibi mwa Australia ya Kati", "ACWST": "Saa za Wastani za Magharibi mwa Australia ya Kati", "ADT": "Saa za Mchana za Atlantiki", "AEDT": "Saa za Mchana za Mashariki mwa Australia", "AEST": "Saa za Wastani za Mashariki mwa Australia", "AKDT": "Saa za Mchana za Alaska", "AKST": "Saa za Wastani za Alaska", "ARST": "Saa za Majira Joto za Ajentina", "ART": "Saa za Wastani za Ajentina", "AST": "Saa za Wastani za Atlantiki", "AWDT": "Saa za Mchana za Australia Magharibi", "AWST": "Saa za Wastani za Australia Magharibi", "BOT": "Saa za Bolivia", "BT": "Saa za Butani", "CAT": "Saa za Afrika ya Kati", "CDT": "Saa za Mchana za Kati", "CHADT": "Saa za Mchana za Chatham", "CHAST": "Saa za Wastani za Chatham", "CLST": "Saa za Majira ya joto za Chile", "CLT": "Saa za Wastani za Chile", "COST": "Saa za Majira ya Joto za Kolombia", "COT": "Saa za Wastani za Kolombia", "CST": "Saa za Wastani za Kati", "ChST": "Saa za Wastani za Chamorro", "EAT": "Saa za Afrika Mashariki", "ECT": "Saa za Ekwado", "EDT": "Saa za Mchana za Mashariki", "EST": "Saa za Wastani za Mashariki", "GFT": "Saa za Guiana", "GMT": "Saa za Greenwich", "GST": "Saa za Wastani za Ghuba", "GYT": "Saa za Guyana", "HADT": "Saa za Mchana za Hawaii-Aleutian", "HAST": "Saa za Wastani za Hawaii-Aleutian", "HAT": "Saa za Mchana za Newfoundland", "HECU": "Saa za Mchana za Kuba", "HEEG": "Saa za Majira ya joto za Greenland Mashariki", "HENOMX": "Saa za Mchana za Kaskazini Magharibi mwa Meksiko", "HEOG": "Saa za Majira ya joto za Greenland Magharibi", "HEPM": "Saa za Mchana za Saint-Pierre na Miquelon", "HEPMX": "Saa za mchana za pasifiki za Meksiko", "HKST": "Saa za Majira ya joto za Hong Kong", "HKT": "Saa za Wastani za Hong Kong", "HNCU": "Saa za Wastani za Kuba", "HNEG": "Saa za Wastani za Greenland Mashariki", "HNNOMX": "Saa za Wastani za Kaskazini Magharibi mwa Meksiko", "HNOG": "Saa za Wastani za Greenland Magharibi", "HNPM": "Saa za Wastani ya Saint-Pierre na Miquelon", "HNPMX": "Saa za wastani za pasifiki za Meksiko", "HNT": "Saa za Wastani za Newfoundland", "IST": "Saa za Wastani za India", "JDT": "Saa za Mchana za Japani", "JST": "Saa za Wastani za Japani", "LHDT": "Saa za Mchana za Lord Howe", "LHST": "Saa za Wastani za Lord Howe", "MDT": "MDT", "MESZ": "Saa za Majira ya joto za Ulaya ya Kati", "MEZ": "Saa za Wastani za Ulaya ya Kati", "MST": "MST", "MYT": "Saa za Malesia", "NZDT": "Saa za Mchana za Nyuzilandi", "NZST": "Saa za Wastani za Nyuzilandi", "OESZ": "Saa za Majira ya joto za Mashariki mwa Ulaya", "OEZ": "Saa za Wastani za Mashariki mwa Ulaya", "PDT": "Saa za Mchana za Pasifiki", "PST": "Saa za Wastani za Pasifiki", "SAST": "Saa za Wastani za Afrika Kusini", "SGT": "Saa za Wastani za Singapoo", "SRT": "Saa za Suriname", "TMST": "Saa za Majira ya Joto za Turkmenistani", "TMT": "Saa za Wastani za Turkmenistani", "UYST": "Saa za Majira ya Joto za Urugwai", "UYT": "Saa za Wastani za Urugwai", "VET": "Saa za Venezuela", "WARST": "Saa za Majira ya Joto za Magharibi mwa Ajentina", "WART": "Saa za Wastani za Magharibi mwa Ajentina", "WAST": "Saa za Majira ya joto za Afrika Magharibi", "WAT": "Saa za Wastani za Afrika Magharibi", "WESZ": "Saa za Majira ya joto za Magharibi mwa Ulaya", "WEZ": "Saa za Wastani za Magharibi mwa Ulaya", "WIB": "Saa za Magharibi mwa Indonesia", "WIT": "Saa za Mashariki mwa Indonesia", "WITA": "Saa za Indonesia ya Kati", "∅∅∅": "Saa za Majira ya joto za Azores"},
 	}
 }
 
@@ -291,26 +291,15 @@ func (sw *sw_KE) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sw.currencies[currency]
-	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
-	count := 0
-	inWhole := v == 0
+	l := len(s) + len(symbol) + 5
+
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
 			b = append(b, sw.decimal[0])
-			inWhole = true
 			continue
-		}
-
-		if inWhole {
-			if count == 3 {
-				b = append(b, sw.group[0])
-				count = 1
-			} else {
-				count++
-			}
 		}
 
 		b = append(b, s[i])
@@ -318,6 +307,10 @@ func (sw *sw_KE) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	for j := len(symbol) - 1; j >= 0; j-- {
 		b = append(b, symbol[j])
+	}
+
+	for j := len(sw.currencyPositivePrefix) - 1; j >= 0; j-- {
+		b = append(b, sw.currencyPositivePrefix[j])
 	}
 
 	if num < 0 {
@@ -329,17 +322,6 @@ func (sw *sw_KE) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 		b[i], b[j] = b[j], b[i]
 	}
 
-	if int(v) < 2 {
-
-		if v == 0 {
-			b = append(b, sw.decimal...)
-		}
-
-		for i := 0; i < 2-int(v); i++ {
-			b = append(b, '0')
-		}
-	}
-
 	return string(b)
 }
 
@@ -349,26 +331,15 @@ func (sw *sw_KE) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sw.currencies[currency]
-	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
-	count := 0
-	inWhole := v == 0
+	l := len(s) + len(symbol) + 5
+
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
 			b = append(b, sw.decimal[0])
-			inWhole = true
 			continue
-		}
-
-		if inWhole {
-			if count == 3 {
-				b = append(b, sw.group[0])
-				count = 1
-			} else {
-				count++
-			}
 		}
 
 		b = append(b, s[i])
@@ -380,7 +351,11 @@ func (sw *sw_KE) FmtAccounting(num float64, v uint64, currency currency.Type) st
 			b = append(b, symbol[j])
 		}
 
-		b = append(b, sw.currencyNegativePrefix[0])
+		for j := len(sw.currencyNegativePrefix) - 1; j >= 0; j-- {
+			b = append(b, sw.currencyNegativePrefix[j])
+		}
+
+		b = append(b, sw.minus[0])
 
 	} else {
 
@@ -388,26 +363,15 @@ func (sw *sw_KE) FmtAccounting(num float64, v uint64, currency currency.Type) st
 			b = append(b, symbol[j])
 		}
 
+		for j := len(sw.currencyPositivePrefix) - 1; j >= 0; j-- {
+			b = append(b, sw.currencyPositivePrefix[j])
+		}
+
 	}
 
 	// reverse
 	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
 		b[i], b[j] = b[j], b[i]
-	}
-
-	if int(v) < 2 {
-
-		if v == 0 {
-			b = append(b, sw.decimal...)
-		}
-
-		for i := 0; i < 2-int(v); i++ {
-			b = append(b, '0')
-		}
-	}
-
-	if num < 0 {
-		b = append(b, sw.currencyNegativeSuffix...)
 	}
 
 	return string(b)

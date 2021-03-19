@@ -18,12 +18,13 @@ type to struct {
 	group                  string
 	minus                  string
 	percent                string
+	percentSuffix          string
 	perMille               string
 	timeSeparator          string
 	inifinity              string
 	currencies             []string // idx = enum of currency code
-	currencyPositivePrefix string
-	currencyNegativePrefix string
+	currencyPositiveSuffix string
+	currencyNegativeSuffix string
 	monthsAbbreviated      []string
 	monthsNarrow           []string
 	monthsWide             []string
@@ -48,16 +49,17 @@ func New() locales.Translator {
 		pluralsCardinal:        []locales.PluralRule{6},
 		pluralsOrdinal:         nil,
 		pluralsRange:           nil,
-		decimal:                ".",
-		group:                  ",",
-		minus:                  "-",
-		percent:                "%",
-		perMille:               "‰",
+		decimal:                "٫",
+		group:                  "٬",
+		minus:                  "‏-",
+		percent:                "٪؜",
+		perMille:               "؉",
 		timeSeparator:          ":",
 		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "₾", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "T$", "TPE", "TRL", "TRY", "TTD", "$", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		currencyPositivePrefix: " ",
-		currencyNegativePrefix: " ",
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "F$", "FKP", "FRF", "GBP", "GEK", "₾", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "S$", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "T$", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		percentSuffix:          " ",
+		currencyPositiveSuffix: " ",
+		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "Sān", "Fēp", "Maʻa", "ʻEpe", "Mē", "Sun", "Siu", "ʻAok", "Sep", "ʻOka", "Nōv", "Tīs"},
 		monthsNarrow:           []string{"", "S", "F", "M", "E", "M", "S", "S", "A", "S", "O", "N", "T"},
 		monthsWide:             []string{"", "Sānuali", "Fēpueli", "Maʻasi", "ʻEpeleli", "Mē", "Sune", "Siulai", "ʻAokosi", "Sepitema", "ʻOkatopa", "Nōvema", "Tīsema"},
@@ -69,9 +71,9 @@ func New() locales.Translator {
 		periodsNarrow:          []string{"AM", "PM"},
 		periodsWide:            []string{"hengihengi", "efiafi"},
 		erasAbbreviated:        []string{"KM", "TS"},
-		erasNarrow:             []string{"", ""},
+		erasNarrow:             []string{"KM", "TS"},
 		erasWide:               []string{"ki muʻa", "taʻu ʻo Sīsū"},
-		timezones:              map[string]string{"GFT": "houa fakakuiana-fakafalanisē", "PDT": "houa fakaʻamelika-tokelau pasifika taimi liliu", "BOT": "houa fakapolīvia", "CDT": "houa fakaʻamelika-tokelau loto taimi liliu", "MEZ": "houa fakaʻeulope-loto taimi totonu", "TMST": "houa fakatūkimenisitani taimi liliu", "OEZ": "houa fakaʻeulope-hahake taimi totonu", "WAT": "houa fakaʻafelika-hihifo taimi totonu", "GYT": "houa fakakuiana", "GMT": "houa fakakiliniuisi mālie", "MYT": "houa fakamaleisia", "HADT": "houa fakahauaʻi taimi liliu", "HENOMX": "houa fakamekisikou-tokelauhihifo taimi liliu", "AST": "houa fakaʻamelika-tokelau ʻatalanitiki taimi totonu", "COT": "houa fakakolomipia taimi totonu", "HKT": "houa fakahongi-kongi taimi totonu", "HECU": "houa fakakiupa taimi liliu", "HEPM": "houa fakasā-piea-mo-mikeloni taimi liliu", "MST": "houa fakamakau taimi totonu", "HAST": "houa fakahauaʻi taimi totonu", "TMT": "houa fakatūkimenisitani taimi totonu", "LHDT": "houa fakamotuʻeikihoue taimi liliu", "WEZ": "houa fakaʻeulope-hihifo taimi totonu", "NZDT": "houa fakanuʻusila taimi liliu", "EST": "houa fakaʻamelika-tokelau hahake taimi totonu", "CAT": "houa fakaʻafelika-loto", "SGT": "houa fakasingapoa", "HEPMX": "houa fakamekisikou-pasifika taimi liliu", "CHAST": "houa fakasatihami taimi totonu", "AEST": "houa fakaʻaositelēlia-hahake taimi totonu", "ART": "houa fakaʻasenitina taimi totonu", "HEEG": "houa fakafonuamata-hahake taimi liliu", "CLT": "houa fakasili taimi totonu", "ACDT": "houa fakaʻaositelēlia-loto taimi liliu", "HAT": "houa fakafonuaʻilofoʻou taimi liliu", "HKST": "houa fakahongi-kongi taimi liliu", "AKDT": "houa fakaʻalasika taimi liliu", "ACWDT": "houa fakaʻaositelēlia-loto-hihifo taimi liliu", "NZST": "houa fakanuʻusila taimi totonu", "ARST": "houa fakaʻasenitina taimi liliu", "HNOG": "houa fakafonuamata-hihifo taimi totonu", "HNEG": "houa fakafonuamata-hahake taimi totonu", "MDT": "houa fakamakau taimi liliu", "VET": "houa fakavenesuela", "ADT": "houa fakaʻamelika-tokelau ʻatalanitiki taimi liliu", "WAST": "houa fakaʻafelika-hihifo taimi liliu", "OESZ": "houa fakaʻeulope-hahake taimi liliu", "AEDT": "houa fakaʻaositelēlia-hahake taimi liliu", "SAST": "houa fakaʻafelika-tonga", "AWDT": "houa fakaʻaositelēlia-hihifo taimi liliu", "UYT": "houa fakaʻulukuai taimi totonu", "WIT": "houa fakaʻinitonisia-hahake", "MESZ": "houa fakaʻeulope-loto taimi liliu", "JDT": "houa fakasiapani taimi liliu", "COST": "houa fakakolomipia taimi liliu", "EDT": "houa fakaʻamelika-tokelau hahake taimi liliu", "ACST": "houa fakaʻaositelēlia-loto taimi totonu", "WESZ": "houa fakaʻeulope-hihifo taimi liliu", "CLST": "houa fakasili taimi liliu", "JST": "houa fakasiapani taimi totonu", "WART": "houa fakaʻasenitina-hihifo taimi totonu", "ChST": "houa fakakamolo", "PST": "houa fakaʻamelika-tokelau pasifika taimi totonu", "WITA": "houa fakaʻinitonisia-loto", "LHST": "houa fakamotuʻeikihoue taimi totonu", "WARST": "houa fakaʻasenitina-hihifo taimi liliu", "HNCU": "houa fakakiupa taimi totonu", "BT": "houa fakapūtani", "CST": "houa fakaʻamelika-tokelau loto taimi totonu", "IST": "houa fakaʻinitia", "ECT": "houa fakaʻekuetoa", "WIB": "houa fakaʻinitonisia-hihifo", "HNPM": "houa fakasā-piea-mo-mikeloni taimi totonu", "SRT": "houa fakasuliname", "UYST": "houa fakaʻulukuai taimi liliu", "HNNOMX": "houa fakamekisikou-tokelauhihifo taimi totonu", "HEOG": "houa fakafonuamata-hihifo taimi liliu", "AKST": "houa fakaʻalasika taimi totonu", "HNPMX": "houa fakamekisikou-pasifika taimi totonu", "CHADT": "houa fakasatihami taimi liliu", "AWST": "houa fakaʻaositelēlia-hihifo taimi totonu", "∅∅∅": "houa fakaʻakelī taimi liliu", "ACWST": "houa fakaʻaositelēlia-loto-hihifo taimi totonu", "EAT": "houa fakaʻafelika-hahake", "HNT": "houa fakafonuaʻilofoʻou taimi totonu"},
+		timezones:              map[string]string{"ACDT": "houa fakaʻaositelēlia-loto taimi liliu", "ACST": "houa fakaʻaositelēlia-loto taimi totonu", "ACWDT": "houa fakaʻaositelēlia-loto-hihifo taimi liliu", "ACWST": "houa fakaʻaositelēlia-loto-hihifo taimi totonu", "ADT": "houa fakaʻamelika-tokelau ʻatalanitiki taimi liliu", "AEDT": "houa fakaʻaositelēlia-hahake taimi liliu", "AEST": "houa fakaʻaositelēlia-hahake taimi totonu", "AKDT": "houa fakaʻalasika taimi liliu", "AKST": "houa fakaʻalasika taimi totonu", "ARST": "houa fakaʻasenitina taimi liliu", "ART": "houa fakaʻasenitina taimi totonu", "AST": "houa fakaʻamelika-tokelau ʻatalanitiki taimi totonu", "AWDT": "houa fakaʻaositelēlia-hihifo taimi liliu", "AWST": "houa fakaʻaositelēlia-hihifo taimi totonu", "BOT": "houa fakapolīvia", "BT": "houa fakapūtani", "CAT": "houa fakaʻafelika-loto", "CDT": "houa fakaʻamelika-tokelau loto taimi liliu", "CHADT": "houa fakasatihami taimi liliu", "CHAST": "houa fakasatihami taimi totonu", "CLST": "houa fakasili taimi liliu", "CLT": "houa fakasili taimi totonu", "COST": "houa fakakolomipia taimi liliu", "COT": "houa fakakolomipia taimi totonu", "CST": "houa fakaʻamelika-tokelau loto taimi totonu", "ChST": "houa fakakamolo", "EAT": "houa fakaʻafelika-hahake", "ECT": "houa fakaʻekuetoa", "EDT": "houa fakaʻamelika-tokelau hahake taimi liliu", "EST": "houa fakaʻamelika-tokelau hahake taimi totonu", "GFT": "houa fakakuiana-fakafalanisē", "GMT": "houa fakakiliniuisi mālie", "GST": "houa fakakūlifi", "GYT": "houa fakakuiana", "HADT": "houa fakahauaʻi taimi liliu", "HAST": "houa fakahauaʻi taimi totonu", "HAT": "houa fakafonuaʻilofoʻou taimi liliu", "HECU": "houa fakakiupa taimi liliu", "HEEG": "houa fakafonuamata-hahake taimi liliu", "HENOMX": "houa fakamekisikou-tokelauhihifo taimi liliu", "HEOG": "houa fakafonuamata-hihifo taimi liliu", "HEPM": "houa fakasā-piea-mo-mikeloni taimi liliu", "HEPMX": "houa fakamekisikou-pasifika taimi liliu", "HKST": "houa fakahongi-kongi taimi liliu", "HKT": "houa fakahongi-kongi taimi totonu", "HNCU": "houa fakakiupa taimi totonu", "HNEG": "houa fakafonuamata-hahake taimi totonu", "HNNOMX": "houa fakamekisikou-tokelauhihifo taimi totonu", "HNOG": "houa fakafonuamata-hihifo taimi totonu", "HNPM": "houa fakasā-piea-mo-mikeloni taimi totonu", "HNPMX": "houa fakamekisikou-pasifika taimi totonu", "HNT": "houa fakafonuaʻilofoʻou taimi totonu", "IST": "houa fakaʻinitia", "JDT": "houa fakasiapani taimi liliu", "JST": "houa fakasiapani taimi totonu", "LHDT": "houa fakamotuʻeikihoue taimi liliu", "LHST": "houa fakamotuʻeikihoue taimi totonu", "MDT": "houa fakaʻamelika-tokelau moʻunga taimi liliu", "MESZ": "houa fakaʻeulope-loto taimi liliu", "MEZ": "houa fakaʻeulope-loto taimi totonu", "MST": "houa fakaʻamelika-tokelau moʻunga taimi totonu", "MYT": "houa fakamaleisia", "NZDT": "houa fakanuʻusila taimi liliu", "NZST": "houa fakanuʻusila taimi totonu", "OESZ": "houa fakaʻeulope-hahake taimi liliu", "OEZ": "houa fakaʻeulope-hahake taimi totonu", "PDT": "houa fakaʻamelika-tokelau pasifika taimi liliu", "PST": "houa fakaʻamelika-tokelau pasifika taimi totonu", "SAST": "houa fakaʻafelika-tonga", "SGT": "houa fakasingapoa", "SRT": "houa fakasuliname", "TMST": "houa fakatūkimenisitani taimi liliu", "TMT": "houa fakatūkimenisitani taimi totonu", "UYST": "houa fakaʻulukuai taimi liliu", "UYT": "houa fakaʻulukuai taimi totonu", "VET": "houa fakavenesuela", "WARST": "houa fakaʻasenitina-hihifo taimi liliu", "WART": "houa fakaʻasenitina-hihifo taimi totonu", "WAST": "houa fakaʻafelika-hihifo taimi liliu", "WAT": "houa fakaʻafelika-hihifo taimi totonu", "WESZ": "houa fakaʻeulope-hihifo taimi liliu", "WEZ": "houa fakaʻeulope-hihifo taimi totonu", "WIB": "houa fakaʻinitonisia-hihifo", "WIT": "houa fakaʻinitonisia-hahake", "WITA": "houa fakaʻinitonisia-loto", "∅∅∅": "houa fakapalāsila taimi liliu"},
 	}
 }
 
@@ -199,7 +201,7 @@ func (to *to) Minus() string {
 func (to *to) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 6 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -207,14 +209,18 @@ func (to *to) FmtNumber(num float64, v uint64) string {
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			b = append(b, to.decimal[0])
+			for j := len(to.decimal) - 1; j >= 0; j-- {
+				b = append(b, to.decimal[j])
+			}
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				b = append(b, to.group[0])
+				for j := len(to.group) - 1; j >= 0; j-- {
+					b = append(b, to.group[j])
+				}
 				count = 1
 			} else {
 				count++
@@ -225,7 +231,9 @@ func (to *to) FmtNumber(num float64, v uint64) string {
 	}
 
 	if num < 0 {
-		b = append(b, to.minus[0])
+		for j := len(to.minus) - 1; j >= 0; j-- {
+			b = append(b, to.minus[j])
+		}
 	}
 
 	// reverse
@@ -240,13 +248,15 @@ func (to *to) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (to *to) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 3
+	l := len(s) + 12
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			b = append(b, to.decimal[0])
+			for j := len(to.decimal) - 1; j >= 0; j-- {
+				b = append(b, to.decimal[j])
+			}
 			continue
 		}
 
@@ -254,13 +264,17 @@ func (to *to) FmtPercent(num float64, v uint64) string {
 	}
 
 	if num < 0 {
-		b = append(b, to.minus[0])
+		for j := len(to.minus) - 1; j >= 0; j-- {
+			b = append(b, to.minus[j])
+		}
 	}
 
 	// reverse
 	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
 		b[i], b[j] = b[j], b[i]
 	}
+
+	b = append(b, to.percentSuffix...)
 
 	b = append(b, to.percent...)
 
@@ -272,7 +286,7 @@ func (to *to) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := to.currencies[currency]
-	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 8 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -280,14 +294,18 @@ func (to *to) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			b = append(b, to.decimal[0])
+			for j := len(to.decimal) - 1; j >= 0; j-- {
+				b = append(b, to.decimal[j])
+			}
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				b = append(b, to.group[0])
+				for j := len(to.group) - 1; j >= 0; j-- {
+					b = append(b, to.group[j])
+				}
 				count = 1
 			} else {
 				count++
@@ -297,16 +315,10 @@ func (to *to) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 		b = append(b, s[i])
 	}
 
-	for j := len(symbol) - 1; j >= 0; j-- {
-		b = append(b, symbol[j])
-	}
-
-	for j := len(to.currencyPositivePrefix) - 1; j >= 0; j-- {
-		b = append(b, to.currencyPositivePrefix[j])
-	}
-
 	if num < 0 {
-		b = append(b, to.minus[0])
+		for j := len(to.minus) - 1; j >= 0; j-- {
+			b = append(b, to.minus[j])
+		}
 	}
 
 	// reverse
@@ -324,6 +336,10 @@ func (to *to) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 			b = append(b, '0')
 		}
 	}
+
+	b = append(b, to.currencyPositiveSuffix...)
+
+	b = append(b, symbol...)
 
 	return string(b)
 }
@@ -334,7 +350,7 @@ func (to *to) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := to.currencies[currency]
-	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 8 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -342,14 +358,18 @@ func (to *to) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			b = append(b, to.decimal[0])
+			for j := len(to.decimal) - 1; j >= 0; j-- {
+				b = append(b, to.decimal[j])
+			}
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				b = append(b, to.group[0])
+				for j := len(to.group) - 1; j >= 0; j-- {
+					b = append(b, to.group[j])
+				}
 				count = 1
 			} else {
 				count++
@@ -361,24 +381,8 @@ func (to *to) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	if num < 0 {
 
-		for j := len(symbol) - 1; j >= 0; j-- {
-			b = append(b, symbol[j])
-		}
-
-		for j := len(to.currencyNegativePrefix) - 1; j >= 0; j-- {
-			b = append(b, to.currencyNegativePrefix[j])
-		}
-
-		b = append(b, to.minus[0])
-
-	} else {
-
-		for j := len(symbol) - 1; j >= 0; j-- {
-			b = append(b, symbol[j])
-		}
-
-		for j := len(to.currencyPositivePrefix) - 1; j >= 0; j-- {
-			b = append(b, to.currencyPositivePrefix[j])
+		for j := len(to.minus) - 1; j >= 0; j-- {
+			b = append(b, to.minus[j])
 		}
 
 	}
@@ -397,6 +401,15 @@ func (to *to) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 		for i := 0; i < 2-int(v); i++ {
 			b = append(b, '0')
 		}
+	}
+
+	if num < 0 {
+		b = append(b, to.currencyNegativeSuffix...)
+		b = append(b, symbol...)
+	} else {
+
+		b = append(b, to.currencyPositiveSuffix...)
+		b = append(b, symbol...)
 	}
 
 	return string(b)

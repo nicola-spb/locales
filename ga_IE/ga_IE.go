@@ -48,14 +48,12 @@ func New() locales.Translator {
 		pluralsCardinal:        []locales.PluralRule{2, 3, 4, 5, 6},
 		pluralsOrdinal:         []locales.PluralRule{2, 6},
 		pluralsRange:           []locales.PluralRule{2, 3, 4, 5, 6},
-		decimal:                ".",
 		group:                  ",",
-		minus:                  "-",
 		percent:                "%",
 		perMille:               "‰",
 		timeSeparator:          ":",
 		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		currencyNegativePrefix: "(",
 		currencyNegativeSuffix: ")",
 		monthsAbbreviated:      []string{"", "Ean", "Feabh", "Márta", "Aib", "Beal", "Meith", "Iúil", "Lún", "MFómh", "DFómh", "Samh", "Noll"},
@@ -65,13 +63,13 @@ func New() locales.Translator {
 		daysNarrow:             []string{"D", "L", "M", "C", "D", "A", "S"},
 		daysShort:              []string{"Do", "Lu", "Má", "Cé", "Dé", "Ao", "Sa"},
 		daysWide:               []string{"Dé Domhnaigh", "Dé Luain", "Dé Máirt", "Dé Céadaoin", "Déardaoin", "Dé hAoine", "Dé Sathairn"},
-		periodsAbbreviated:     []string{"a.m.", "p.m."},
-		periodsNarrow:          []string{"a", "p"},
-		periodsWide:            []string{"a.m.", "p.m."},
+		periodsAbbreviated:     []string{"r.n.", "i.n."},
+		periodsNarrow:          []string{"r.n.", "i.n."},
+		periodsWide:            []string{"r.n.", "i.n."},
 		erasAbbreviated:        []string{"RC", "AD"},
 		erasNarrow:             []string{"RC", "AD"},
 		erasWide:               []string{"Roimh Chríost", "Anno Domini"},
-		timezones:              map[string]string{"HNEG": "Am Caighdeánach Oirthear na Graonlainne", "COT": "Am Caighdeánach na Colóime", "COST": "Am Samhraidh na Colóime", "MYT": "Am na Malaeisia", "ARST": "Am Samhraidh na hAirgintíne", "ADT": "Am Samhraidh an Atlantaigh", "BOT": "Am na Bolaive", "JST": "Am Caighdeánach na Seapáine", "BT": "Am na Bútáine", "WITA": "Am Lár na hIndinéise", "WAST": "Am Samhraidh Iarthar na hAfraice", "GYT": "Am na Guáine", "WESZ": "Am Samhraidh Iarthar na hEorpa", "GMT": "Meán-Am Greenwich", "HNPMX": "Am Caighdeánach Meicsiceach an Aigéin Chiúin", "HEPMX": "Am Samhraidh Meicsiceach an Aigéin Chiúin", "MDT": "Am Samhraidh na Sléibhte", "HECU": "Am Samhraidh Chúba", "AWDT": "Am Samhraidh Iarthar na hAstráile", "TMT": "Am Caighdeánach na Tuircméanastáine", "CHAST": "Am Caighdeánach Chatham", "CHADT": "Am Samhraidh Chatham", "HNCU": "Am Caighdeánach Chúba", "MEZ": "Am Caighdeánach Lár na hEorpa", "HAST": "Am Caighdeánach Haváí-Ailiúit", "HKST": "Am Samhraidh Hong Cong", "HEEG": "Am Samhraidh Oirthear na Graonlainne", "HNPM": "Am Caighdeánach Saint-Pierre-et-Miquelon", "HEPM": "Am Samhraidh Saint-Pierre-et-Miquelon", "CDT": "Am Samhraidh Lárnach", "HNOG": "Am Caighdeánach Iarthar na Graonlainne", "AEST": "Am Caighdeánach Oirthear na hAstráile", "ART": "Am Caighdeánach na hAirgintíne", "ECT": "Am Eacuadór", "ChST": "Am Caighdeánach Seamórach", "NZST": "Am Caighdeánach na Nua-Shéalainne", "WART": "Am Caighdeánach Iarthar na hAirgintíne", "HADT": "Am Samhraidh Haváí-Ailiúit", "PDT": "Am Samhraidh an Aigéin Chiúin", "HAT": "Am Samhraidh Thalamh an Éisc", "AKST": "Am Caighdeánach Alasca", "AKDT": "Am Samhraidh Alasca", "SGT": "Am Caighdeánach Shingeapór", "ACWDT": "Am Samhraidh Mheániarthar na hAstráile", "IST": "Am Caighdeánach na hIndia", "LHST": "Am Caighdeánach Lord Howe", "HNNOMX": "Am Caighdeánach Iarthuaisceart Mheicsiceo", "JDT": "Am Samhraidh na Seapáine", "EAT": "Am Oirthear na hAfraice", "HKT": "Am Caighdeánach Hong Cong", "CLST": "Am Samhraidh na Sile", "ACST": "Am Caighdeánach Lár na hAstráile", "OEZ": "Am Caighdeánach Oirthear na hEorpa", "WIB": "Am Iarthar na hIndinéise", "WEZ": "Am Caighdeánach Iarthar na hEorpa", "WAT": "Am Caighdeánach Iarthar na hAfraice", "ACWST": "Am Caighdeánach Mheániarthar na hAstráile", "UYT": "Am Caighdeánach Uragua", "AEDT": "Am Samhraidh Oirthear na hAstráile", "HENOMX": "Am Samhraidh Iarthuaisceart Mheicsiceo", "HEOG": "Am Samhraidh Iarthar na Graonlainne", "GFT": "Am Ghuáin na Fraince", "ACDT": "Am Samhraidh Lár na hAstráile", "SRT": "Am Shuranam", "NZDT": "Am Samhraidh na Nua-Shéalainne", "TMST": "Am Samhraidh na Tuircméanastáine", "MST": "Am Caighdeánach na Sléibhte", "CST": "Am Caighdeánach Lárnach", "SAST": "Am Caighdeánach na hAfraice Theas", "EST": "Am Caighdeánach an Oirthir", "EDT": "Am Samhraidh an Oirthir", "CAT": "Am Lár na hAfraice", "AWST": "Am Caighdeánach Iarthar na hAstráile", "MESZ": "Am Samhraidh Lár na hEorpa", "VET": "Am Veiniséala", "HNT": "Am Caighdeánach Thalamh an Éisc", "CLT": "Am Caighdeánach na Sile", "UYST": "Am Samhraidh Uragua", "WIT": "Am Oirthear na hIndinéise", "WARST": "Am Samhraidh Iarthar na hAirgintíne", "LHDT": "Am Samhraidh Lord Howe", "∅∅∅": "Am Samhraidh na nAsór", "AST": "Am Caighdeánach an Atlantaigh", "PST": "Am Caighdeánach an Aigéin Chiúin", "OESZ": "Am Samhraidh Oirthear na hEorpa"},
+		timezones:              map[string]string{"ACDT": "Am Samhraidh Lár na hAstráile", "ACST": "Am Caighdeánach Lár na hAstráile", "ACWDT": "Am Samhraidh Mheániarthar na hAstráile", "ACWST": "Am Caighdeánach Mheániarthar na hAstráile", "ADT": "Am Samhraidh an Atlantaigh", "AEDT": "Am Samhraidh Oirthear na hAstráile", "AEST": "Am Caighdeánach Oirthear na hAstráile", "AKDT": "Am Samhraidh Alasca", "AKST": "Am Caighdeánach Alasca", "ARST": "Am Samhraidh na hAirgintíne", "ART": "Am Caighdeánach na hAirgintíne", "AST": "Am Caighdeánach an Atlantaigh", "AWDT": "Am Samhraidh Iarthar na hAstráile", "AWST": "Am Caighdeánach Iarthar na hAstráile", "BOT": "Am na Bolaive", "BT": "Am na Bútáine", "CAT": "Am Lár na hAfraice", "CDT": "Am Samhraidh Lárnach Mheiriceá Thuaidh", "CHADT": "Am Samhraidh Chatham", "CHAST": "Am Caighdeánach Chatham", "CLST": "Am Samhraidh na Sile", "CLT": "Am Caighdeánach na Sile", "COST": "Am Samhraidh na Colóime", "COT": "Am Caighdeánach na Colóime", "CST": "Am Caighdeánach Lárnach Mheiriceá Thuaidh", "ChST": "Am Caighdeánach Seamórach", "EAT": "Am Oirthear na hAfraice", "ECT": "Am Eacuadór", "EDT": "Am Samhraidh Oirthear Mheiriceá Thuaidh", "EST": "Am Caighdeánach Oirthear Mheiriceá Thuaidh", "GFT": "Am Ghuáin na Fraince", "GMT": "Meán-Am Greenwich", "GST": "Am Caighdeánach na Murascaille", "GYT": "Am na Guáine", "HADT": "Am Samhraidh Haváí-Ailiúit", "HAST": "Am Caighdeánach Haváí-Ailiúit", "HAT": "Am Samhraidh Thalamh an Éisc", "HECU": "Am Samhraidh Chúba", "HEEG": "Am Samhraidh Oirthear na Graonlainne", "HENOMX": "Am Samhraidh Iarthuaisceart Mheicsiceo", "HEOG": "Am Samhraidh Iarthar na Graonlainne", "HEPM": "Am Samhraidh Saint-Pierre-et-Miquelon", "HEPMX": "Am Samhraidh Meicsiceach an Aigéin Chiúin", "HKST": "Am Samhraidh Hong Cong", "HKT": "Am Caighdeánach Hong Cong", "HNCU": "Am Caighdeánach Chúba", "HNEG": "Am Caighdeánach Oirthear na Graonlainne", "HNNOMX": "Am Caighdeánach Iarthuaisceart Mheicsiceo", "HNOG": "Am Caighdeánach Iarthar na Graonlainne", "HNPM": "Am Caighdeánach Saint-Pierre-et-Miquelon", "HNPMX": "Am Caighdeánach Meicsiceach an Aigéin Chiúin", "HNT": "Am Caighdeánach Thalamh an Éisc", "IST": "Am Caighdeánach na hIndia", "JDT": "Am Samhraidh na Seapáine", "JST": "Am Caighdeánach na Seapáine", "LHDT": "Am Samhraidh Lord Howe", "LHST": "Am Caighdeánach Lord Howe", "MDT": "Am Samhraidh Mhacao", "MESZ": "Am Samhraidh Lár na hEorpa", "MEZ": "Am Caighdeánach Lár na hEorpa", "MST": "Am Caighdeánach Mhacao", "MYT": "Am na Malaeisia", "NZDT": "Am Samhraidh na Nua-Shéalainne", "NZST": "Am Caighdeánach na Nua-Shéalainne", "OESZ": "Am Samhraidh Oirthear na hEorpa", "OEZ": "Am Caighdeánach Oirthear na hEorpa", "PDT": "Am Samhraidh an Aigéin Chiúin", "PST": "Am Caighdeánach an Aigéin Chiúin", "SAST": "Am na hAfraice Theas", "SGT": "Am Caighdeánach Shingeapór", "SRT": "Am Shuranam", "TMST": "Am Samhraidh na Tuircméanastáine", "TMT": "Am Caighdeánach na Tuircméanastáine", "UYST": "Am Samhraidh Uragua", "UYT": "Am Caighdeánach Uragua", "VET": "Am Veiniséala", "WARST": "Am Samhraidh Iarthar na hAirgintíne", "WART": "Am Caighdeánach Iarthar na hAirgintíne", "WAST": "Am Samhraidh Iarthar na hAfraice", "WAT": "Am Caighdeánach Iarthar na hAfraice", "WESZ": "Am Samhraidh Iarthar na hEorpa", "WEZ": "Am Caighdeánach Iarthar na hEorpa", "WIB": "Am Iarthar na hIndinéise", "WIT": "Am Oirthear na hIndinéise", "WITA": "Am Lár na hIndinéise", "∅∅∅": "Am Samhraidh na hAmasóine"},
 	}
 }
 
@@ -257,49 +255,14 @@ func (ga *ga_IE) Minus() string {
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ga_IE' and handles both Whole and Real numbers based on 'v'
 func (ga *ga_IE) FmtNumber(num float64, v uint64) string {
 
-	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
-	count := 0
-	inWhole := v == 0
-	b := make([]byte, 0, l)
-
-	for i := len(s) - 1; i >= 0; i-- {
-
-		if s[i] == '.' {
-			b = append(b, ga.decimal[0])
-			inWhole = true
-			continue
-		}
-
-		if inWhole {
-			if count == 3 {
-				b = append(b, ga.group[0])
-				count = 1
-			} else {
-				count++
-			}
-		}
-
-		b = append(b, s[i])
-	}
-
-	if num < 0 {
-		b = append(b, ga.minus[0])
-	}
-
-	// reverse
-	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
-		b[i], b[j] = b[j], b[i]
-	}
-
-	return string(b)
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'ga_IE' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (ga *ga_IE) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 3
+	l := len(s) + 1
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -331,7 +294,7 @@ func (ga *ga_IE) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ga.currencies[currency]
-	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 0 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -389,7 +352,7 @@ func (ga *ga_IE) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ga.currencies[currency]
-	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

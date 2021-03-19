@@ -18,7 +18,6 @@ type ar struct {
 	group                  string
 	minus                  string
 	percent                string
-	percentSuffix          string
 	perMille               string
 	timeSeparator          string
 	inifinity              string
@@ -56,8 +55,7 @@ func New() locales.Translator {
 		perMille:               "؉",
 		timeSeparator:          ":",
 		inifinity:              "∞",
-		currencies:             []string{"ADP", "د.إ.\u200f", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AU$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "د.ب.\u200f", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "د.ج.\u200f", "ECS", "ECV", "EEK", "ج.م.\u200f", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "₪", "₹", "د.ع.\u200f", "ر.إ.", "ISJ", "ISK", "ITL", "JMD", "د.أ.\u200f", "JP¥", "KES", "KGS", "KHR", "ف.ج.ق.\u200f", "KPW", "KRH", "KRO", "₩", "د.ك.\u200f", "KYD", "KZT", "LAK", "ل.ل.\u200f", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "د.ل.\u200f", "د.م.\u200f", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "أ.م.\u200f", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "ر.ع.\u200f", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "ر.ق.\u200f", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "ر.س.\u200f", "SBD", "SCR", "د.س.\u200f", "ج.س.", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "ل.س.\u200f", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "د.ت.\u200f", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "US$", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "₫", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "***", "YDD", "ر.ي.\u200f", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		percentSuffix:          " ",
+		currencies:             []string{"ADP", "د.إ.\u200f", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AU$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "د.ب.\u200f", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "د.ج.\u200f", "ECS", "ECV", "EEK", "ج.م.\u200f", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "UK£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "₪", "₹", "د.ع.\u200f", "ر.إ.", "ISJ", "ISK", "ITL", "JMD", "د.أ.\u200f", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "₩", "د.ك.\u200f", "KYD", "KZT", "LAK", "ل.ل.\u200f", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "د.ل.\u200f", "د.م.\u200f", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "أ.م.", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "ر.ع.\u200f", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "ر.ق.\u200f", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "ر.س.\u200f", "SBD", "SCR", "د.س.\u200f", "ج.س.", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "ل.س.\u200f", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "د.ت.\u200f", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "US$", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "₫", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "***", "YDD", "ر.ي.\u200f", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		currencyPositiveSuffix: " ",
 		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"},
@@ -65,15 +63,15 @@ func New() locales.Translator {
 		monthsWide:             []string{"", "يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"},
 		daysAbbreviated:        []string{"الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"},
 		daysNarrow:             []string{"ح", "ن", "ث", "ر", "خ", "ج", "س"},
-		daysShort:              []string{"الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"},
+		daysShort:              []string{"أحد", "إثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"},
 		daysWide:               []string{"الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"},
 		periodsAbbreviated:     []string{"ص", "م"},
 		periodsNarrow:          []string{"ص", "م"},
 		periodsWide:            []string{"ص", "م"},
-		erasAbbreviated:        []string{"", ""},
+		erasAbbreviated:        []string{"ق.م", "م"},
 		erasNarrow:             []string{"", ""},
-		erasWide:               []string{"", ""},
-		timezones:              map[string]string{"HADT": "توقيت هاواي ألوتيان الصيفي", "NZDT": "توقيت نيوزيلندا الصيفي", "ARST": "توقيت الأرجنتين الصيفي", "HKT": "توقيت هونغ كونغ الرسمي", "HNPM": "توقيت سانت بيير وميكولون الرسمي", "ACST": "توقيت وسط أستراليا الرسمي", "CHAST": "توقيت تشاتام الرسمي", "JST": "توقيت اليابان الرسمي", "ACDT": "توقيت وسط أستراليا الصيفي", "WESZ": "توقيت غرب أوروبا الصيفي", "ADT": "التوقيت الصيفي الأطلسي", "GYT": "توقيت غيانا", "ECT": "توقيت الإكوادور", "CHADT": "توقيت تشاتام الصيفي", "HECU": "توقيت كوبا الصيفي", "SRT": "توقيت سورينام", "WIT": "توقيت شرق إندونيسيا", "TMST": "توقيت تركمانستان الصيفي", "CDT": "التوقيت الصيفي المركزي لأمريكا الشمالية", "VET": "توقيت فنزويلا", "WAT": "توقيت غرب أفريقيا الرسمي", "GFT": "توقيت غايانا الفرنسية", "HNPMX": "توقيت المحيط الهادي الرسمي للمكسيك", "HEPM": "توقيت سانت بيير وميكولون الصيفي", "TMT": "توقيت تركمانستان الرسمي", "ART": "توقيت الأرجنتين الرسمي", "HAT": "توقيت نيوفاوندلاند الصيفي", "GMT": "توقيت غرينتش", "CLT": "توقيت شيلي الرسمي", "∅∅∅": "توقيت برازيليا الصيفي", "MDT": "MDT", "AWDT": "توقيت غرب أستراليا الصيفي", "HNNOMX": "التوقيت الرسمي لشمال غرب المكسيك", "IST": "توقيت الهند", "EDT": "التوقيت الصيفي الشرقي لأمريكا الشمالية", "CAT": "توقيت وسط أفريقيا", "HNCU": "توقيت كوبا الرسمي", "ACWST": "توقيت غرب وسط أستراليا الرسمي", "MESZ": "توقيت وسط أوروبا الصيفي", "HEOG": "توقيت غرب غرينلاند الصيفي", "SAST": "توقيت جنوب أفريقيا", "WITA": "توقيت وسط إندونيسيا", "WART": "توقيت غرب الأرجنتين الرسمي", "WARST": "توقيت غرب الأرجنتين الصيفي", "WIB": "توقيت غرب إندونيسيا", "OEZ": "توقيت شرق أوروبا الرسمي", "HENOMX": "التوقيت الصيفي لشمال غرب المكسيك", "HNEG": "توقيت شرق غرينلاند الرسمي", "PST": "توقيت المحيط الهادي الرسمي", "PDT": "توقيت المحيط الهادي الصيفي", "BOT": "توقيت بوليفيا", "UYT": "توقيت أورغواي الرسمي", "NZST": "توقيت نيوزيلندا الرسمي", "HEPMX": "توقيت المحيط الهادي الصيفي للمكسيك", "HEEG": "توقيت شرق غرينلاند الصيفي", "HNT": "توقيت نيوفاوندلاند الرسمي", "AKDT": "توقيت ألاسكا الصيفي", "MST": "MST", "MEZ": "توقيت وسط أوروبا الرسمي", "OESZ": "توقيت شرق أوروبا الصيفي", "AEST": "توقيت شرق أستراليا الرسمي", "HNOG": "توقيت غرب غرينلاند الرسمي", "COST": "توقيت كولومبيا الصيفي", "WEZ": "توقيت غرب أوروبا الرسمي", "COT": "توقيت كولومبيا الرسمي", "AWST": "توقيت غرب أستراليا الرسمي", "ACWDT": "توقيت غرب وسط أستراليا الصيفي", "LHST": "توقيت لورد هاو الرسمي", "AEDT": "توقيت شرق أستراليا الصيفي", "WAST": "توقيت غرب أفريقيا الصيفي", "LHDT": "التوقيت الصيفي للورد هاو", "AST": "التوقيت الرسمي الأطلسي", "EAT": "توقيت شرق أفريقيا", "EST": "التوقيت الرسمي الشرقي لأمريكا الشمالية", "ChST": "توقيت تشامورو", "JDT": "توقيت اليابان الصيفي", "HKST": "توقيت هونغ كونغ الصيفي", "CLST": "توقيت شيلي الصيفي", "BT": "توقيت بوتان", "CST": "التوقيت الرسمي المركزي لأمريكا الشمالية", "MYT": "توقيت ماليزيا", "UYST": "توقيت أورغواي الصيفي", "HAST": "توقيت هاواي ألوتيان الرسمي", "AKST": "التوقيت الرسمي لألاسكا", "SGT": "توقيت سنغافورة"},
+		erasWide:               []string{"قبل الميلاد", "ميلادي"},
+		timezones:              map[string]string{"ACDT": "توقيت وسط أستراليا الصيفي", "ACST": "توقيت وسط أستراليا الرسمي", "ACWDT": "توقيت غرب وسط أستراليا الصيفي", "ACWST": "توقيت غرب وسط أستراليا الرسمي", "ADT": "التوقيت الصيفي الأطلسي", "AEDT": "توقيت شرق أستراليا الصيفي", "AEST": "توقيت شرق أستراليا الرسمي", "AKDT": "توقيت ألاسكا الصيفي", "AKST": "التوقيت الرسمي لألاسكا", "ARST": "توقيت الأرجنتين الصيفي", "ART": "توقيت الأرجنتين الرسمي", "AST": "التوقيت الرسمي الأطلسي", "AWDT": "توقيت غرب أستراليا الصيفي", "AWST": "توقيت غرب أستراليا الرسمي", "BOT": "توقيت بوليفيا", "BT": "توقيت بوتان", "CAT": "توقيت وسط أفريقيا", "CDT": "التوقيت الصيفي المركزي لأمريكا الشمالية", "CHADT": "توقيت تشاتام الصيفي", "CHAST": "توقيت تشاتام الرسمي", "CLST": "توقيت تشيلي الصيفي", "CLT": "توقيت تشيلي الرسمي", "COST": "توقيت كولومبيا الصيفي", "COT": "توقيت كولومبيا الرسمي", "CST": "التوقيت الرسمي المركزي لأمريكا الشمالية", "ChST": "توقيت تشامورو", "EAT": "توقيت شرق أفريقيا", "ECT": "توقيت الإكوادور", "EDT": "التوقيت الصيفي الشرقي لأمريكا الشمالية", "EST": "التوقيت الرسمي الشرقي لأمريكا الشمالية", "GFT": "توقيت غويانا الفرنسية", "GMT": "توقيت غرينتش", "GST": "توقيت الخليج", "GYT": "توقيت غيانا", "HADT": "توقيت هاواي ألوتيان الصيفي", "HAST": "توقيت هاواي ألوتيان الرسمي", "HAT": "توقيت نيوفاوندلاند الصيفي", "HECU": "توقيت كوبا الصيفي", "HEEG": "توقيت شرق غرينلاند الصيفي", "HENOMX": "التوقيت الصيفي لشمال غرب المكسيك", "HEOG": "توقيت غرب غرينلاند الصيفي", "HEPM": "توقيت سانت بيير وميكولون الصيفي", "HEPMX": "توقيت المحيط الهادي الصيفي للمكسيك", "HKST": "توقيت هونغ كونغ الصيفي", "HKT": "توقيت هونغ كونغ الرسمي", "HNCU": "توقيت كوبا الرسمي", "HNEG": "توقيت شرق غرينلاند الرسمي", "HNNOMX": "التوقيت الرسمي لشمال غرب المكسيك", "HNOG": "توقيت غرب غرينلاند الرسمي", "HNPM": "توقيت سانت بيير وميكولون الرسمي", "HNPMX": "توقيت المحيط الهادي الرسمي للمكسيك", "HNT": "توقيت نيوفاوندلاند الرسمي", "IST": "توقيت الهند", "JDT": "توقيت اليابان الصيفي", "JST": "توقيت اليابان الرسمي", "LHDT": "التوقيت الصيفي للورد هاو", "LHST": "توقيت لورد هاو الرسمي", "MDT": "MDT", "MESZ": "توقيت وسط أوروبا الصيفي", "MEZ": "توقيت وسط أوروبا الرسمي", "MST": "MST", "MYT": "توقيت ماليزيا", "NZDT": "توقيت نيوزيلندا الصيفي", "NZST": "توقيت نيوزيلندا الرسمي", "OESZ": "توقيت شرق أوروبا الصيفي", "OEZ": "توقيت شرق أوروبا الرسمي", "PDT": "توقيت المحيط الهادي الصيفي", "PST": "توقيت المحيط الهادي الرسمي", "SAST": "توقيت جنوب أفريقيا", "SGT": "توقيت سنغافورة", "SRT": "توقيت سورينام", "TMST": "توقيت تركمانستان الصيفي", "TMT": "توقيت تركمانستان الرسمي", "UYST": "توقيت أوروغواي الصيفي", "UYT": "توقيت أوروغواي الرسمي", "VET": "توقيت فنزويلا", "WARST": "توقيت غرب الأرجنتين الصيفي", "WART": "توقيت غرب الأرجنتين الرسمي", "WAST": "توقيت غرب أفريقيا الصيفي", "WAT": "توقيت غرب أفريقيا الرسمي", "WESZ": "توقيت غرب أوروبا الصيفي", "WEZ": "توقيت غرب أوروبا الرسمي", "WIB": "توقيت غرب إندونيسيا", "WIT": "توقيت شرق إندونيسيا", "WITA": "توقيت وسط إندونيسيا", "∅∅∅": "توقيت الأمازون الصيفي"},
 	}
 }
 
@@ -315,7 +313,7 @@ func (ar *ar) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (ar *ar) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 11
+	l := len(s) + 9
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -340,8 +338,6 @@ func (ar *ar) FmtPercent(num float64, v uint64) string {
 	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
 		b[i], b[j] = b[j], b[i]
 	}
-
-	b = append(b, ar.percentSuffix...)
 
 	b = append(b, ar.percent...)
 
@@ -538,7 +534,7 @@ func (ar *ar) FmtDateLong(t time.Time) string {
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
 	b = append(b, []byte{0x20}...)
 	b = append(b, ar.monthsWide[t.Month()]...)
-	b = append(b, []byte{0xd8, 0x8c, 0x20}...)
+	b = append(b, []byte{0x20}...)
 
 	if t.Year() > 0 {
 		b = strconv.AppendInt(b, int64(t.Year()), 10)
@@ -559,7 +555,7 @@ func (ar *ar) FmtDateFull(t time.Time) string {
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
 	b = append(b, []byte{0x20}...)
 	b = append(b, ar.monthsWide[t.Month()]...)
-	b = append(b, []byte{0xd8, 0x8c, 0x20}...)
+	b = append(b, []byte{0x20}...)
 
 	if t.Year() > 0 {
 		b = strconv.AppendInt(b, int64(t.Year()), 10)

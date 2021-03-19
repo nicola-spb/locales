@@ -48,20 +48,26 @@ func New() locales.Translator {
 		pluralsRange:       nil,
 		decimal:            ",",
 		group:              " ",
+		minus:              "-",
+		percent:            "%",
+		perMille:           "‰",
 		timeSeparator:      ":",
-		currencies:         []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DA", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		inifinity:          "∞",
+		currencies:         []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "$AR", "ATS", "$AU", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "FB", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "$BM", "$BN", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "$BS", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "$BZ", "$CA", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "$CL", "CNH", "CNX", "CNY", "$CO", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "£CY", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DA", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "$FJ", "£FK", "F", "£", "GEK", "GEL", "GHC", "GHS", "£GI", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "£IE", "£IL", "ILR", "₪", "₹", "IQD", "IRR", "ISJ", "ISK", "₤IT", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "₩", "KWD", "KYD", "KZT", "LAK", "£LB", "LKR", "LRD", "lLS", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "fMA", "MCF", "MDC", "MDL", "MGA", "Fmg", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "£MT", "MUR", "MVP", "MVR", "MWK", "$MX", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "$NA", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "$NZ", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "$RH", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "$SB", "SCR", "SDD", "SDG", "SDP", "SEK", "$SG", "SHP", "SIT", "SKK", "SLL", "SOS", "$SR", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "$TT", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "$", "USN", "USS", "UYI", "UYP", "$UY", "UYW", "UZS", "VEB", "VEF", "VES", "₫", "VNN", "VUV", "WS$", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "DTS", "XEU", "XFO", "XFU", "CFA", "XPD", "FCFP", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		monthsAbbreviated:  []string{"", "Yen", "Fur", "Meɣ", "Yeb", "May", "Yun", "Yul", "Ɣuc", "Cte", "Tub", "Nun", "Duǧ"},
-		monthsNarrow:       []string{"", "Y", "F", "M", "Y", "M", "Y", "Y", "Ɣ", "C", "T", "N", "D"},
+		monthsNarrow:       []string{"", "Y", "F", "M", "Y", "M", "Y", "Y", "Ɣ", "C", "T", "W", "D"},
 		monthsWide:         []string{"", "Yennayer", "Fuṛar", "Meɣres", "Yebrir", "Mayyu", "Yunyu", "Yulyu", "Ɣuct", "Ctembeṛ", "Tubeṛ", "Nunembeṛ", "Duǧembeṛ"},
 		daysAbbreviated:    []string{"Yan", "San", "Kraḍ", "Kuẓ", "Sam", "Sḍis", "Say"},
-		daysNarrow:         []string{"Y", "S", "K", "K", "S", "S", "S"},
+		daysNarrow:         []string{"C", "R", "A", "H", "M", "S", "D"},
+		daysShort:          []string{"Cr", "Ri", "Ra", "Hd", "Mh", "Sm", "Sd"},
 		daysWide:           []string{"Yanass", "Sanass", "Kraḍass", "Kuẓass", "Samass", "Sḍisass", "Sayass"},
 		periodsAbbreviated: []string{"n tufat", "n tmeddit"},
+		periodsNarrow:      []string{"f", "m"},
 		periodsWide:        []string{"n tufat", "n tmeddit"},
 		erasAbbreviated:    []string{"snd. T.Ɛ", "sld. T.Ɛ"},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"send talalit n Ɛisa", "seld talalit n Ɛisa"},
-		timezones:          map[string]string{"WARST": "WARST", "ADT": "ADT", "CHAST": "CHAST", "SRT": "SRT", "WART": "WART", "HNT": "HNT", "BOT": "BOT", "MDT": "MDT", "HNEG": "HNEG", "ART": "ART", "HAT": "HAT", "WEZ": "WEZ", "HNCU": "HNCU", "CDT": "CDT", "AEST": "AEST", "PST": "PST", "COST": "COST", "TMT": "TMT", "OESZ": "OESZ", "EAT": "EAT", "AKST": "AKST", "ChST": "ChST", "HNPMX": "HNPMX", "UYST": "UYST", "WITA": "WITA", "ARST": "ARST", "CLST": "CLST", "UYT": "UYT", "VET": "VET", "HNNOMX": "HNNOMX", "ACDT": "ACDT", "∅∅∅": "∅∅∅", "SAST": "SAST", "GYT": "GYT", "CST": "CST", "LHST": "LHST", "AST": "AST", "HKT": "HKT", "EST": "EST", "WIB": "WIB", "CHADT": "CHADT", "AWST": "AWST", "CAT": "CAT", "EDT": "EDT", "SGT": "SGT", "HEPM": "HEPM", "PDT": "PDT", "MESZ": "MESZ", "HECU": "HECU", "HKST": "HKST", "ECT": "ECT", "OEZ": "OEZ", "HEOG": "HEOG", "HEEG": "HEEG", "ACWST": "ACWST", "NZST": "NZST", "JDT": "JDT", "MEZ": "MEZ", "WAT": "WAT", "AKDT": "AKDT", "GMT": "GMT", "HNPM": "HNPM", "ACST": "ACST", "HNOG": "HNOG", "COT": "COT", "HEPMX": "HEPMX", "MST": "MST", "NZDT": "NZDT", "LHDT": "LHDT", "JST": "JST", "WAST": "WAST", "CLT": "CLT", "GFT": "GFT", "MYT": "MYT", "HADT": "HADT", "TMST": "TMST", "ACWDT": "ACWDT", "HAST": "HAST", "HENOMX": "HENOMX", "IST": "IST", "AEDT": "AEDT", "BT": "BT", "AWDT": "AWDT", "WIT": "WIT", "WESZ": "WESZ"},
+		timezones:          map[string]string{"ACDT": "Akud n unebdu n Ustralya talemmast", "ACST": "Akud amezday n Ustralya talemmast", "ACWDT": "Akud n unebdu n tlemmast n umalu n Ustralya", "ACWST": "Akud amezday n tlemmast n umalu n Ustralya", "ADT": "Akud aṭlasan n unebdu", "AEDT": "Akud n unebdu n Ustralya n usammar", "AEST": "Akud amezday n Ustralya n usammar", "AKDT": "Akud n unebdu n Alaska", "AKST": "Akud amezday n Alaska", "ARST": "Akud n unebdu n Arjuntin", "ART": "Akud amezday n Arjuntin", "AST": "Akud amezday aṭlasan", "AWDT": "Akud n unebdu Ustralya n umalu", "AWST": "Akud amezday n Ustralya n umalu", "BOT": "Akud n Bulivi", "BT": "Akud n Butan", "CAT": "Akud n Tefriqt talemmast", "CDT": "Akud n unebdu n tlemmast n Marikan", "CHADT": "Akud n unebdu Catham", "CHAST": "Akud amezday n Catham", "CLST": "Akud n unebdu n Cili", "CLT": "Akud amezday n Cili", "COST": "Akud n unebdu n Kulumbya", "COT": "Akud amezday n Kulumbya", "CST": "Akud amezday n tlemmast n Marikan", "ChST": "Akud amezday n Camurru", "EAT": "Akud n Tefriqt n usammar", "ECT": "Akud n Ikwaṭur", "EDT": "Akud n unebdu n usammar n Marikan", "EST": "Akud amezday n usammar n Marikan", "GFT": "Akud n Gwiyan tafransist", "GMT": "Akud alemmas n Greenwich", "GST": "Akud amezday n Gulf", "GYT": "Akud n Gwiyan", "HADT": "Akud n unebu n Haway-Aliwsyan", "HAST": "Akud amezday n Haway-Aliwsyan", "HAT": "Akud n unebdu n Wakal amaynut", "HECU": "Akud n unebdu n Kuba", "HEEG": "Akud n unebdu n Grinland n usammar", "HENOMX": "Akud n unebdu n ugafa amalu n Miksik", "HEOG": "Akud n unebdu n Grinland n umalu", "HEPM": "Akud n unebdu n San Pyir & Miklun", "HEPMX": "Akud amelwi n unebdu n Miksik", "HKST": "Akud n unebdu n Hung Kung", "HKT": "Akud amezday n Hung Kung", "HNCU": "Akud amezday n Kuba", "HNEG": "Akud amezday n Grinland n usammar", "HNNOMX": "Akud amezday n ugafa amalu n Miksik", "HNOG": "Akud amezday n Grinland n umalu", "HNPM": "Akud amezday n San Pyir & Miklun", "HNPMX": "Akud amezday amelwi n Miksik", "HNT": "Akud amezday n Wakal amaynut", "IST": "Akud amezday n Lhend", "JDT": "Akud n unebdu n Japun", "JST": "Akud amezday n Japun", "LHDT": "Akud n Unebdu n Lord Howe", "LHST": "Akud Amagnu n Lord Howe", "MDT": "MDT", "MESZ": "Akud n unebdu n Turuft talemmast", "MEZ": "Akud amezday n Turuft talemmast", "MST": "MST", "MYT": "Akud n Malizya", "NZDT": "Akud n unebdu Ziland Tamaynut", "NZST": "Akud amezday n Ziland Tamaynut", "OESZ": "Akud n unebdu n Turuft n usammar", "OEZ": "Akud amezday n Turuft n usammar", "PDT": "Akud umelwi n unebdu", "PST": "Akud amezday amelwi", "SAST": "Akud amezday n Tefriqt n unẓul", "SGT": "Akud amezday n Sangapur", "SRT": "Akud n Surinam", "TMST": "Akud n unebdu n Turkmanistan", "TMT": "Akud amezday n Turkmanistan", "UYST": "Akud n unebdu n Urugway", "UYT": "Akud amezday n Urugway", "VET": "Akud n Vinizwila", "WARST": "Akud n unebdu n Arjuntin n usammar", "WART": "Akud amezday n Arjuntin n usammar", "WAST": "Akud n unebdu n Tefriqt n umalu", "WAT": "Akud amezday n Tefriqt n umalu", "WESZ": "Akud n unebdu Turuft n umalu", "WEZ": "Akud amezday n Turuft n umalu", "WIB": "Akud n umalu n Andunisya", "WIT": "Akud n usammar n Andunisya", "WITA": "Akud n tlemmast n Andunisya", "∅∅∅": "Akud n unebdu n Piru"},
 	}
 }
 
@@ -196,13 +202,75 @@ func (kab *kab) Minus() string {
 // FmtNumber returns 'num' with digits/precision of 'v' for 'kab' and handles both Whole and Real numbers based on 'v'
 func (kab *kab) FmtNumber(num float64, v uint64) string {
 
-	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
+	count := 0
+	inWhole := v == 0
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, kab.decimal[0])
+			inWhole = true
+			continue
+		}
+
+		if inWhole {
+			if count == 3 {
+				for j := len(kab.group) - 1; j >= 0; j-- {
+					b = append(b, kab.group[j])
+				}
+				count = 1
+			} else {
+				count++
+			}
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		b = append(b, kab.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'kab' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (kab *kab) FmtPercent(num float64, v uint64) string {
-	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	l := len(s) + 3
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, kab.decimal[0])
+			continue
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		b = append(b, kab.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	b = append(b, kab.percent...)
+
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'kab'
@@ -210,7 +278,7 @@ func (kab *kab) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kab.currencies[currency]
-	l := len(s) + len(symbol) + 1 + 2*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -268,7 +336,7 @@ func (kab *kab) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kab.currencies[currency]
-	l := len(s) + len(symbol) + 1 + 2*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

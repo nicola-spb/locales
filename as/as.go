@@ -47,18 +47,31 @@ func New() locales.Translator {
 		locale:                 "as",
 		pluralsCardinal:        []locales.PluralRule{2, 6},
 		pluralsOrdinal:         []locales.PluralRule{2, 3, 4, 5, 6},
-		pluralsRange:           nil,
-		timeSeparator:          ".",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		pluralsRange:           []locales.PluralRule{2, 6},
+		decimal:                ".",
+		group:                  ",",
+		minus:                  "-",
+		percent:                "%",
+		perMille:               "‰",
+		timeSeparator:          ":",
+		inifinity:              "∞",
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "A$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "₪", "₹", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "₩", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "US$", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "₫", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		currencyPositivePrefix: " ",
 		currencyNegativePrefix: " ",
-		monthsAbbreviated:      []string{"", "জানু", "ফেব্ৰু", "মাৰ্চ", "এপ্ৰিল", "মে", "জুন", "জুলাই", "আগ", "সেপ্ট", "অক্টো", "নভে", "ডিসে"},
-		monthsWide:             []string{"", "জানুৱাৰী", "ফেব্ৰুৱাৰী", "মাৰ্চ", "এপ্ৰিল", "মে", "জুন", "জুলাই", "আগষ্ট", "ছেপ্তেম্বৰ", "অক্টোবৰ", "নৱেম্বৰ", "ডিচেম্বৰ"},
-		daysAbbreviated:        []string{"ৰবি", "সোম", "মঙ্গল", "বুধ", "বৃহষ্পতি", "শুক্ৰ", "শনি"},
-		daysWide:               []string{"দেওবাৰ", "সোমবাৰ", "মঙ্গলবাৰ", "বুধবাৰ", "বৃহষ্পতিবাৰ", "শুক্ৰবাৰ", "শনিবাৰ"},
-		periodsAbbreviated:     []string{"পূৰ্বাহ্ণ", "অপৰাহ্ণ"},
-		periodsWide:            []string{"পূৰ্বাহ্ণ", "অপৰাহ্ণ"},
-		timezones:              map[string]string{"WIB": "WIB", "HEPMX": "HEPMX", "HNPM": "HNPM", "HNNOMX": "HNNOMX", "GYT": "GYT", "ECT": "ECT", "WARST": "WARST", "HENOMX": "HENOMX", "AKST": "AKST", "PST": "PST", "SRT": "SRT", "HKST": "HKST", "HNPMX": "HNPMX", "BT": "BT", "JDT": "JDT", "COST": "COST", "CHADT": "CHADT", "WITA": "WITA", "OESZ": "OESZ", "HNEG": "HNEG", "WAT": "WAT", "HAT": "HAT", "ACDT": "ACDT", "WESZ": "WESZ", "SGT": "SGT", "HEPM": "HEPM", "CST": "CST", "ACWST": "ACWST", "HEOG": "HEOG", "ADT": "ADT", "ART": "ART", "CLT": "CLT", "CLST": "CLST", "ChST": "ChST", "UYST": "UYST", "LHST": "LHST", "HNOG": "HNOG", "AWST": "AWST", "WIT": "WIT", "TMST": "TMST", "NZST": "NZST", "AST": "AST", "HEEG": "HEEG", "WEZ": "WEZ", "GMT": "GMT", "CHAST": "CHAST", "CDT": "CDT", "AWDT": "AWDT", "TMT": "TMT", "MEZ": "MEZ", "MESZ": "MESZ", "LHDT": "LHDT", "HKT": "HKT", "ACST": "ACST", "PDT": "PDT", "BOT": "BOT", "ACWDT": "ACWDT", "UYT": "UYT", "HADT": "HADT", "JST": "JST", "IST": "ভাৰতীয় সময়", "AEST": "AEST", "AKDT": "AKDT", "∅∅∅": "∅∅∅", "HNCU": "HNCU", "AEDT": "AEDT", "EAT": "EAT", "CAT": "CAT", "MST": "MST", "NZDT": "NZDT", "VET": "VET", "HECU": "HECU", "HAST": "HAST", "WART": "WART", "ARST": "ARST", "COT": "COT", "GFT": "GFT", "HNT": "HNT", "MDT": "MDT", "MYT": "MYT", "OEZ": "OEZ", "SAST": "SAST", "WAST": "WAST", "EST": "EST", "EDT": "EDT"},
+		monthsAbbreviated:      []string{"", "জানু", "ফেব্ৰু", "মাৰ্চ", "এপ্ৰিল", "মে’", "জুন", "জুলাই", "আগ", "ছেপ্তে", "অক্টো", "নৱে", "ডিচে"},
+		monthsNarrow:           []string{"", "জ", "ফ", "ম", "এ", "ম", "জ", "জ", "আ", "ছ", "অ", "ন", "ড"},
+		monthsWide:             []string{"", "জানুৱাৰী", "ফেব্ৰুৱাৰী", "মাৰ্চ", "এপ্ৰিল", "মে’", "জুন", "জুলাই", "আগষ্ট", "ছেপ্তেম্বৰ", "অক্টোবৰ", "নৱেম্বৰ", "ডিচেম্বৰ"},
+		daysAbbreviated:        []string{"দেও", "সোম", "মঙ্গল", "বুধ", "বৃহ", "শুক্ৰ", "শনি"},
+		daysNarrow:             []string{"দ", "স", "ম", "ব", "ব", "শ", "শ"},
+		daysShort:              []string{"দেও", "সোম", "মঙ্গল", "বুধ", "বৃহ", "শুক্ৰ", "শনি"},
+		daysWide:               []string{"দেওবাৰ", "সোমবাৰ", "মঙ্গলবাৰ", "বুধবাৰ", "বৃহস্পতিবাৰ", "শুক্ৰবাৰ", "শনিবাৰ"},
+		periodsAbbreviated:     []string{"পূৰ্বাহ্ন", "অপৰাহ্ন"},
+		periodsNarrow:          []string{"পূৰ্বাহ্ন", "অপৰাহ্ন"},
+		periodsWide:            []string{"পূৰ্বাহ্ন", "অপৰাহ্ন"},
+		erasAbbreviated:        []string{"খ্ৰীঃ পূঃ", "খ্ৰীঃ"},
+		erasNarrow:             []string{"", ""},
+		erasWide:               []string{"খ্ৰীষ্টপূৰ্ব", "খ্ৰীষ্টাব্দ"},
+		timezones:              map[string]string{"ACDT": "অষ্ট্ৰেলিয়াৰ কেন্দ্ৰীয় ডেলাইট সময়", "ACST": "অষ্ট্ৰেলিয়াৰ কেন্দ্ৰীয় মান সময়", "ACWDT": "অষ্ট্ৰেলিয়াৰ কেন্দ্ৰীয় পাশ্চাত্য ডেলাইট সময়", "ACWST": "অষ্ট্ৰেলিয়াৰ কেন্দ্ৰীয় পাশ্চাত্য মান সময়", "ADT": "আটলাণ্টিক ডেলাইট সময়", "AEDT": "অষ্ট্ৰেলিয়াৰ প্ৰাচ্য ডেলাইট সময়", "AEST": "অষ্ট্ৰেলিয়াৰ প্ৰাচ্য মান সময়", "AKDT": "আলাস্কাৰ ডেলাইট সময়", "AKST": "আলাস্কাৰ মান সময়", "ARST": "আৰ্জেণ্টিনাৰ গ্ৰীষ্মকালীন সময়", "ART": "আৰ্জেণ্টিনাৰ মান সময়", "AST": "আটলাণ্টিক মান সময়", "AWDT": "অষ্ট্ৰেলিয়াৰ পাশ্চাত্য ডেলাইট সময়", "AWST": "অষ্ট্ৰেলিয়াৰ পাশ্চাত্য মান সময়", "BOT": "বলিভিয়াৰ সময়", "BT": "ভুটানৰ সময়", "CAT": "মধ্য আফ্ৰিকাৰ সময়", "CDT": "উত্তৰ আমেৰিকাৰ কেন্দ্ৰীয় ডেলাইট সময়", "CHADT": "চাথামৰ ডেলাইট সময়", "CHAST": "চাথামৰ মান সময়", "CLST": "চিলিৰ গ্ৰীষ্মকালীন সময়", "CLT": "চিলিৰ মান সময়", "COST": "কলম্বিয়াৰ গ্ৰীষ্মকালীন সময়", "COT": "কলম্বিয়াৰ মান সময়", "CST": "উত্তৰ আমেৰিকাৰ কেন্দ্ৰীয় মান সময়", "ChST": "চামোৰোৰ মান সময়", "EAT": "পূব আফ্ৰিকাৰ সময়", "ECT": "ইকুৱেডৰৰ সময়", "EDT": "উত্তৰ আমেৰিকাৰ প্ৰাচ্য ডেলাইট সময়", "EST": "উত্তৰ আমেৰিকাৰ প্ৰাচ্য মান সময়", "GFT": "ফ্ৰান্স গয়ানাৰ সময়", "GMT": "গ্ৰীণউইচ মান সময়", "GST": "উপসাগৰীয় মান সময়", "GYT": "গায়ানাৰ সময়", "HADT": "হাৱাই-এলিউশ্বনৰ ডেলাইট সময়", "HAST": "হাৱাই-এলিউশ্বনৰ মান সময়", "HAT": "নিউফাউণ্ডলেণ্ডৰ ডেলাইট সময়", "HECU": "কিউবাৰ ডেলাইট সময়", "HEEG": "পূব গ্ৰীণলেণ্ডৰ গ্ৰীষ্মকালীন সময়", "HENOMX": "উত্তৰ-পশ্চিম মেক্সিকোৰ ডেলাইট সময়", "HEOG": "পশ্চিম গ্ৰীণলেণ্ডৰ গ্ৰীষ্মকালীন সময়", "HEPM": "ছেইণ্ট পিয়েৰে আৰু মিকিউৱেলনৰ ডেলাইট সময়", "HEPMX": "মেক্সিকোৰ প্ৰশান্ত ডেলাইট সময়", "HKST": "হং কঙৰ গ্ৰীষ্মকালীন সময়", "HKT": "হং কঙৰ মান সময়", "HNCU": "কিউবাৰ মান সময়", "HNEG": "পূব গ্ৰীণলেণ্ডৰ মান সময়", "HNNOMX": "উত্তৰ-পশ্চিম মেক্সিকোৰ মান সময়", "HNOG": "পশ্চিম গ্ৰীণলেণ্ডৰ মান সময়", "HNPM": "ছেইণ্ট পিয়েৰে আৰু মিকিউৱেলনৰ মান সময়", "HNPMX": "মেক্সিকোৰ প্ৰশান্ত মান সময়", "HNT": "নিউফাউণ্ডলেণ্ডৰ মান সময়", "IST": "ভাৰতীয় মান সময়", "JDT": "জাপানৰ ডেলাইট সময়", "JST": "জাপানৰ মান সময়", "LHDT": "লৰ্ড হাওৰ ডেলাইট সময়", "LHST": "লৰ্ড হাওৰ মান সময়", "MDT": "MDT", "MESZ": "মধ্য ইউৰোপীয় গ্ৰীষ্মকালীন সময়", "MEZ": "মধ্য ইউৰোপীয় মান সময়", "MST": "MST", "MYT": "মালয়েচিয়াৰ সময়", "NZDT": "নিউজিলেণ্ডৰ ডেলাইট সময়", "NZST": "নিউজিলেণ্ডৰ মান সময়", "OESZ": "প্ৰাচ্য ইউৰোপীয় গ্ৰীষ্মকালীন সময়", "OEZ": "প্ৰাচ্য ইউৰোপীয় মান সময়", "PDT": "উত্তৰ আমেৰিকাৰ ডেলাইট সময়", "PST": "উত্তৰ আমেৰিকাৰ প্ৰশান্ত মান সময়", "SAST": "দক্ষিণ আফ্ৰিকাৰ মান সময়", "SGT": "ছিংগাপুৰৰ মান সময়", "SRT": "ছুৰিনামৰ সময়", "TMST": "তুৰ্কমেনিস্তানৰ গ্ৰীষ্মকালীন সময়", "TMT": "তুৰ্কমেনিস্তানৰ মান সময়", "UYST": "উৰুগুৱেৰ গ্ৰীষ্মকালীন সময়", "UYT": "উৰুগুৱেৰ মান সময়", "VET": "ভেনিজুৱেলাৰ সময়", "WARST": "পাশ্চাত্য আৰ্জেণ্টিনাৰ গ্ৰীষ্মকালীন সময়", "WART": "পাশ্চাত্য আৰ্জেণ্টিনাৰ মান সময়", "WAST": "পশ্চিম আফ্ৰিকাৰ গ্ৰীষ্মকালীন সময়", "WAT": "পশ্চিম আফ্ৰিকাৰ মান সময়", "WESZ": "পাশ্চাত্য ইউৰোপীয় গ্ৰীষ্মকালীন সময়", "WEZ": "পাশ্চাত্য ইউৰোপীয় মান সময়", "WIB": "পাশ্চাত্য ইণ্ডোনেচিয়াৰ সময়", "WIT": "প্ৰাচ্য ইণ্ডোনেচিয়াৰ সময়", "WITA": "মধ্য ইণ্ডোনেচিয়াৰ সময়", "∅∅∅": "আজোৰেছৰ গ্ৰীষ্মকালীন সময়"},
 	}
 }
 
@@ -115,7 +128,18 @@ func (as *as) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'as'
 func (as *as) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
-	return locales.PluralRuleUnknown
+
+	start := as.CardinalPluralRule(num1, v1)
+	end := as.CardinalPluralRule(num2, v2)
+
+	if start == locales.PluralRuleOne && end == locales.PluralRuleOne {
+		return locales.PluralRuleOne
+	} else if start == locales.PluralRuleOne && end == locales.PluralRuleOther {
+		return locales.PluralRuleOther
+	}
+
+	return locales.PluralRuleOther
+
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
@@ -135,7 +159,7 @@ func (as *as) MonthNarrow(month time.Month) string {
 
 // MonthsNarrow returns the locales narrow months
 func (as *as) MonthsNarrow() []string {
-	return nil
+	return as.monthsNarrow[1:]
 }
 
 // MonthWide returns the locales wide month given the 'month' provided
@@ -207,7 +231,7 @@ func (as *as) Minus() string {
 func (as *as) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 0
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	inSecondary := false
@@ -257,7 +281,7 @@ func (as *as) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (as *as) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 0
+	l := len(s) + 3
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -289,7 +313,7 @@ func (as *as) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := as.currencies[currency]
-	l := len(s) + len(symbol) + 2
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	inSecondary := false
@@ -360,7 +384,7 @@ func (as *as) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := as.currencies[currency]
-	l := len(s) + len(symbol) + 2
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	inSecondary := false
@@ -530,6 +554,14 @@ func (as *as) FmtTimeShort(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
+	if t.Hour() < 12 {
+		b = append(b, as.periodsAbbreviated[0]...)
+	} else {
+		b = append(b, as.periodsAbbreviated[1]...)
+	}
+
+	b = append(b, []byte{0x20}...)
+
 	h := t.Hour()
 
 	if h > 12 {
@@ -544,13 +576,6 @@ func (as *as) FmtTimeShort(t time.Time) string {
 	}
 
 	b = strconv.AppendInt(b, int64(t.Minute()), 10)
-	b = append(b, []byte{0x2e, 0x20}...)
-
-	if t.Hour() < 12 {
-		b = append(b, as.periodsAbbreviated[0]...)
-	} else {
-		b = append(b, as.periodsAbbreviated[1]...)
-	}
 
 	return string(b)
 }
@@ -560,6 +585,14 @@ func (as *as) FmtTimeMedium(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
+	if t.Hour() < 12 {
+		b = append(b, as.periodsAbbreviated[0]...)
+	} else {
+		b = append(b, as.periodsAbbreviated[1]...)
+	}
+
+	b = append(b, []byte{0x20}...)
+
 	h := t.Hour()
 
 	if h > 12 {
@@ -581,13 +614,6 @@ func (as *as) FmtTimeMedium(t time.Time) string {
 	}
 
 	b = strconv.AppendInt(b, int64(t.Second()), 10)
-	b = append(b, []byte{0x20}...)
-
-	if t.Hour() < 12 {
-		b = append(b, as.periodsAbbreviated[0]...)
-	} else {
-		b = append(b, as.periodsAbbreviated[1]...)
-	}
 
 	return string(b)
 }
@@ -597,6 +623,14 @@ func (as *as) FmtTimeLong(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
+	if t.Hour() < 12 {
+		b = append(b, as.periodsAbbreviated[0]...)
+	} else {
+		b = append(b, as.periodsAbbreviated[1]...)
+	}
+
+	b = append(b, []byte{0x20}...)
+
 	h := t.Hour()
 
 	if h > 12 {
@@ -618,14 +652,6 @@ func (as *as) FmtTimeLong(t time.Time) string {
 	}
 
 	b = strconv.AppendInt(b, int64(t.Second()), 10)
-	b = append(b, []byte{0x20}...)
-
-	if t.Hour() < 12 {
-		b = append(b, as.periodsAbbreviated[0]...)
-	} else {
-		b = append(b, as.periodsAbbreviated[1]...)
-	}
-
 	b = append(b, []byte{0x20}...)
 
 	tz, _ := t.Zone()
@@ -639,6 +665,14 @@ func (as *as) FmtTimeFull(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
+	if t.Hour() < 12 {
+		b = append(b, as.periodsAbbreviated[0]...)
+	} else {
+		b = append(b, as.periodsAbbreviated[1]...)
+	}
+
+	b = append(b, []byte{0x20}...)
+
 	h := t.Hour()
 
 	if h > 12 {
@@ -660,14 +694,6 @@ func (as *as) FmtTimeFull(t time.Time) string {
 	}
 
 	b = strconv.AppendInt(b, int64(t.Second()), 10)
-	b = append(b, []byte{0x20}...)
-
-	if t.Hour() < 12 {
-		b = append(b, as.periodsAbbreviated[0]...)
-	} else {
-		b = append(b, as.periodsAbbreviated[1]...)
-	}
-
 	b = append(b, []byte{0x20}...)
 
 	tz, _ := t.Zone()
