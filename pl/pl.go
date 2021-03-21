@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"time"
 
-	"locales"
-	"locales/currency"
+	"github.com/nicola-spb/locales"
+	"github.com/nicola-spb/locales/currency"
 )
 
 type pl struct {
@@ -102,8 +102,8 @@ func (pl *pl) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
 	i := int64(n)
-	iMod10 := i % 10
 	iMod100 := i % 100
+	iMod10 := i % 10
 
 	if i == 1 && v == 0 {
 		return locales.PluralRuleOne

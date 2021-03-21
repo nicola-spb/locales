@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"time"
 
-	"locales"
-	"locales/currency"
+	"github.com/nicola-spb/locales"
+	"github.com/nicola-spb/locales/currency"
 )
 
 type sa struct {
@@ -67,7 +67,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"", ""},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"BCE", "CE"},
-		timezones:          map[string]string{"ACDT": "ACDT", "ACST": "ACST", "ACWDT": "ACWDT", "ACWST": "ACWST", "ADT": "अटलाण्टिक अयाम समयः", "AEDT": "AEDT", "AEST": "AEST", "AKDT": "AKDT", "AKST": "AKST", "ARST": "ARST", "ART": "ART", "AST": "अटलाण्टिक आदर्श समयः", "AWDT": "AWDT", "AWST": "AWST", "BOT": "BOT", "BT": "BT", "CAT": "CAT", "CDT": "उत्तर अमेरिका: मध्य अयाम समयः", "CHADT": "CHADT", "CHAST": "CHAST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "उत्तर अमेरिका: मध्य आदर्श समयः", "ChST": "ChST", "EAT": "EAT", "ECT": "ECT", "EDT": "उत्तर अमेरिका: पौर्व अयाम समय:", "EST": "उत्तर अमेरिका: पौर्व आदर्श समयः", "GFT": "GFT", "GMT": "ग्रीनविच मीन समयः", "GST": "GST", "GYT": "GYT", "HADT": "HADT", "HAST": "HAST", "HAT": "HAT", "HECU": "HECU", "HEEG": "HEEG", "HENOMX": "HENOMX", "HEOG": "HEOG", "HEPM": "HEPM", "HEPMX": "HEPMX", "HKST": "HKST", "HKT": "HKT", "HNCU": "HNCU", "HNEG": "HNEG", "HNNOMX": "HNNOMX", "HNOG": "HNOG", "HNPM": "HNPM", "HNPMX": "HNPMX", "HNT": "HNT", "IST": "IST", "JDT": "JDT", "JST": "JST", "LHDT": "LHDT", "LHST": "LHST", "MDT": "उत्तर अमेरिका: शैल अयाम समयः", "MESZ": "मध्य यूरोपीय ग्रीष्म समयः", "MEZ": "मध्य यूरोपीय आदर्श समयः", "MST": "उत्तर अमेरिका: शैल आदर्श समयः", "MYT": "MYT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "पौर्व यूरोपीय ग्रीष्म समयः", "OEZ": "पौर्व यूरोपीय आदर्श समयः", "PDT": "उत्तर अमेरिका: सन्धिप्रिय अयाम समयः", "PST": "उत्तर अमेरिका: सन्धिप्रिय आदर्श समयः", "SAST": "SAST", "SGT": "SGT", "SRT": "SRT", "TMST": "TMST", "TMT": "TMT", "UYST": "UYST", "UYT": "UYT", "VET": "VET", "WARST": "WARST", "WART": "WART", "WAST": "WAST", "WAT": "WAT", "WESZ": "पाश्चात्य यूरोपीय ग्रीष्म समयः", "WEZ": "पाश्चात्य यूरोपीय आदर्श समयः", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "∅∅∅": "∅∅∅"},
+		timezones:          map[string]string{"ACDT": "ACDT", "ACST": "ACST", "ACWDT": "ACWDT", "ACWST": "ACWST", "ADT": "अटलाण्टिक अयाम समयः", "AEDT": "AEDT", "AEST": "AEST", "AKDT": "AKDT", "AKST": "AKST", "ARST": "ARST", "ART": "ART", "AST": "अटलाण्टिक आदर्श समयः", "AWDT": "AWDT", "AWST": "AWST", "BOT": "BOT", "BT": "BT", "CAT": "CAT", "CDT": "उत्तर अमेरिका: मध्य अयाम समयः", "CHADT": "CHADT", "CHAST": "CHAST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "उत्तर अमेरिका: मध्य आदर्श समयः", "ChST": "ChST", "EAT": "EAT", "ECT": "ECT", "EDT": "उत्तर अमेरिका: पौर्व अयाम समय:", "EST": "उत्तर अमेरिका: पौर्व आदर्श समयः", "GFT": "GFT", "GMT": "ग्रीनविच मीन समयः", "GST": "GST", "GYT": "GYT", "HADT": "HADT", "HAST": "HAST", "HAT": "HAT", "HECU": "HECU", "HEEG": "HEEG", "HENOMX": "HENOMX", "HEOG": "HEOG", "HEPM": "HEPM", "HEPMX": "HEPMX", "HKST": "HKST", "HKT": "HKT", "HNCU": "HNCU", "HNEG": "HNEG", "HNNOMX": "HNNOMX", "HNOG": "HNOG", "HNPM": "HNPM", "HNPMX": "HNPMX", "HNT": "HNT", "IST": "IST", "JDT": "JDT", "JST": "JST", "LHDT": "LHDT", "LHST": "LHST", "MDT": "MDT", "MESZ": "मध्य यूरोपीय ग्रीष्म समयः", "MEZ": "मध्य यूरोपीय आदर्श समयः", "MST": "MST", "MYT": "MYT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "पौर्व यूरोपीय ग्रीष्म समयः", "OEZ": "पौर्व यूरोपीय आदर्श समयः", "PDT": "उत्तर अमेरिका: सन्धिप्रिय अयाम समयः", "PST": "उत्तर अमेरिका: सन्धिप्रिय आदर्श समयः", "SAST": "SAST", "SGT": "SGT", "SRT": "SRT", "TMST": "TMST", "TMT": "TMT", "UYST": "UYST", "UYT": "UYT", "VET": "VET", "WARST": "WARST", "WART": "WART", "WAST": "WAST", "WAT": "WAT", "WESZ": "पाश्चात्य यूरोपीय ग्रीष्म समयः", "WEZ": "पाश्चात्य यूरोपीय आदर्श समयः", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "∅∅∅": "∅∅∅"},
 	}
 }
 

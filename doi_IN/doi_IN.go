@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"time"
 
-	"locales"
-	"locales/currency"
+	"github.com/nicola-spb/locales"
+	"github.com/nicola-spb/locales/currency"
 )
 
 type doi_IN struct {
@@ -65,7 +65,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"", ""},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"", ""},
-		timezones:          map[string]string{"ACDT": "ACDT", "ACST": "ACST", "ACWDT": "ACWDT", "ACWST": "ACWST", "ADT": "अटलांटिक डेलाइट समां", "AEDT": "AEDT", "AEST": "AEST", "AKDT": "AKDT", "AKST": "AKST", "ARST": "ARST", "ART": "ART", "AST": "अटलांटिक मानक समां", "AWDT": "AWDT", "AWST": "AWST", "BOT": "BOT", "BT": "BT", "CAT": "CAT", "CDT": "उत्तरी अमरीकी डेलाइट केंदरी समां", "CHADT": "CHADT", "CHAST": "CHAST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "उत्तरी अमरीकी मानक केंदरी समां", "ChST": "ChST", "EAT": "EAT", "ECT": "ECT", "EDT": "उत्तरी अमरीकी डेलाइट पूर्वी समां", "EST": "उत्तरी अमरीकी मानक पूर्वी समां", "GFT": "GFT", "GMT": "ग्रीनविच मीन टाइम", "GST": "GST", "GYT": "GYT", "HADT": "HADT", "HAST": "HAST", "HAT": "HAT", "HECU": "HECU", "HEEG": "HEEG", "HENOMX": "HENOMX", "HEOG": "HEOG", "HEPM": "HEPM", "HEPMX": "HEPMX", "HKST": "HKST", "HKT": "HKT", "HNCU": "HNCU", "HNEG": "HNEG", "HNNOMX": "HNNOMX", "HNOG": "HNOG", "HNPM": "HNPM", "HNPMX": "HNPMX", "HNT": "HNT", "IST": "IST", "JDT": "JDT", "JST": "JST", "LHDT": "LHDT", "LHST": "LHST", "MDT": "उत्तरी अमरीकी डेलाइट माउंटेन समां", "MESZ": "केंदरी यूरोपी गर्मियें दा समां", "MEZ": "केंदरी यूरोपी मानक समां", "MST": "उत्तरी अमरीकी मानक माउंटेन समां", "MYT": "MYT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "उत्तरी यूरोपी गर्मियें दा समां", "OEZ": "उत्तरी यूरोपी मानक समां", "PDT": "उत्तरी अमरीकी डेलाइट प्रशांत समां", "PST": "उत्तरी अमरीकी मानक प्रशांत समां", "SAST": "SAST", "SGT": "SGT", "SRT": "SRT", "TMST": "TMST", "TMT": "TMT", "UYST": "UYST", "UYT": "UYT", "VET": "VET", "WARST": "WARST", "WART": "WART", "WAST": "WAST", "WAT": "WAT", "WESZ": "पच्छमी यूरोपी गर्मियें दा समां", "WEZ": "पच्छमी यूरोपी मानक समां", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "∅∅∅": "∅∅∅"},
+		timezones:          map[string]string{"ACDT": "ACDT", "ACST": "ACST", "ACWDT": "ACWDT", "ACWST": "ACWST", "ADT": "अटलांटिक डेलाइट समां", "AEDT": "AEDT", "AEST": "AEST", "AKDT": "AKDT", "AKST": "AKST", "ARST": "ARST", "ART": "ART", "AST": "अटलांटिक मानक समां", "AWDT": "AWDT", "AWST": "AWST", "BOT": "BOT", "BT": "BT", "CAT": "CAT", "CDT": "उत्तरी अमरीकी डेलाइट केंदरी समां", "CHADT": "CHADT", "CHAST": "CHAST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "उत्तरी अमरीकी मानक केंदरी समां", "ChST": "ChST", "EAT": "EAT", "ECT": "ECT", "EDT": "उत्तरी अमरीकी डेलाइट पूर्वी समां", "EST": "उत्तरी अमरीकी मानक पूर्वी समां", "GFT": "GFT", "GMT": "ग्रीनविच मीन टाइम", "GST": "GST", "GYT": "GYT", "HADT": "HADT", "HAST": "HAST", "HAT": "HAT", "HECU": "HECU", "HEEG": "HEEG", "HENOMX": "HENOMX", "HEOG": "HEOG", "HEPM": "HEPM", "HEPMX": "HEPMX", "HKST": "HKST", "HKT": "HKT", "HNCU": "HNCU", "HNEG": "HNEG", "HNNOMX": "HNNOMX", "HNOG": "HNOG", "HNPM": "HNPM", "HNPMX": "HNPMX", "HNT": "HNT", "IST": "IST", "JDT": "JDT", "JST": "JST", "LHDT": "LHDT", "LHST": "LHST", "MDT": "MDT", "MESZ": "केंदरी यूरोपी गर्मियें दा समां", "MEZ": "केंदरी यूरोपी मानक समां", "MST": "MST", "MYT": "MYT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "उत्तरी यूरोपी गर्मियें दा समां", "OEZ": "उत्तरी यूरोपी मानक समां", "PDT": "उत्तरी अमरीकी डेलाइट प्रशांत समां", "PST": "उत्तरी अमरीकी मानक प्रशांत समां", "SAST": "SAST", "SGT": "SGT", "SRT": "SRT", "TMST": "TMST", "TMT": "TMT", "UYST": "UYST", "UYT": "UYT", "VET": "VET", "WARST": "WARST", "WART": "WART", "WAST": "WAST", "WAT": "WAT", "WESZ": "पच्छमी यूरोपी गर्मियें दा समां", "WEZ": "पच्छमी यूरोपी मानक समां", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "∅∅∅": "∅∅∅"},
 	}
 }
 

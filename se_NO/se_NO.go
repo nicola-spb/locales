@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"time"
 
-	"locales"
-	"locales/currency"
+	"github.com/nicola-spb/locales"
+	"github.com/nicola-spb/locales/currency"
 )
 
 type se_NO struct {

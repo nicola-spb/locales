@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"locales/currency"
+	"github.com/nicola-spb/locales/currency"
 )
 
 func BenchmarkFmtNumber(b *testing.B) {

@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
-	"locales"
-	"locales/currency"
+	"github.com/nicola-spb/locales"
+	"github.com/nicola-spb/locales/currency"
 )
 
 func TestLocale(t *testing.T) {
