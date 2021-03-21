@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/nicola-spb/locales"
-	"github.com/nicola-spb/locales/currency"
+	"locales"
+	"locales/currency"
 )
 
 type {{ .Locale }} struct {
@@ -27,7 +27,7 @@ type {{ .Locale }} struct {
 	{{- end }}
 	perMille   			   string
 	timeSeparator		   string
-	inifinity			   string
+	infinity			   string
 	currencies 			   []string // idx = enum of currency code
 	{{- if gt (len .FmtCurrencyPrefix) 0}}
 	currencyPositivePrefix string
@@ -84,7 +84,7 @@ func New() locales.Translator {
 		timeSeparator:	 "{{ .TimeSeparator }}",
 		{{- end}}
 		{{- if gt (len .Infinity) 0}}
-		inifinity:		 "{{ .Infinity }}",
+		infinity:		 "{{ .Infinity }}",
 		{{- end}}
 		currencies:      {{ .Currencies }},
 		{{- if gt (len .FmtPercentPrefix) 0}}

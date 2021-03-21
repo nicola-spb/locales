@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/nicola-spb/locales"
-	"github.com/nicola-spb/locales/currency"
+	"locales"
+	"locales/currency"
 )
 
 type saq struct {
@@ -20,7 +20,7 @@ type saq struct {
 	percent                string
 	perMille               string
 	timeSeparator          string
-	inifinity              string
+	infinity               string
 	currencies             []string // idx = enum of currency code
 	currencyNegativePrefix string
 	currencyNegativeSuffix string

@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/nicola-spb/locales"
-	"github.com/nicola-spb/locales/currency"
+	"locales"
+	"locales/currency"
 )
 
 type ff_Adlm struct {
@@ -20,7 +20,7 @@ type ff_Adlm struct {
 	percent                string
 	perMille               string
 	timeSeparator          string
-	inifinity              string
+	infinity               string
 	currencies             []string // idx = enum of currency code
 	currencyPositivePrefix string
 	currencyPositiveSuffix string

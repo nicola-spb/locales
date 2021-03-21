@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/nicola-spb/locales"
-	"github.com/nicola-spb/locales/currency"
+	"locales"
+	"locales/currency"
 )
 
 type mai_IN struct {
@@ -20,7 +20,7 @@ type mai_IN struct {
 	percent            string
 	perMille           string
 	timeSeparator      string
-	inifinity          string
+	infinity           string
 	currencies         []string // idx = enum of currency code
 	monthsAbbreviated  []string
 	monthsNarrow       []string
@@ -58,7 +58,7 @@ func New() locales.Translator {
 		erasAbbreviated:   []string{"ईसा-पूर्व", "ईस्वी"},
 		erasNarrow:        []string{"", ""},
 		erasWide:          []string{"", ""},
-		timezones:         map[string]string{"ACDT": "ACDT", "ACST": "ACST", "ACWDT": "ACWDT", "ACWST": "ACWST", "ADT": "अटलांटिक डेलाइट समय", "AEDT": "AEDT", "AEST": "AEST", "AKDT": "AKDT", "AKST": "AKST", "ARST": "ARST", "ART": "ART", "AST": "अटलांटिक मानक समय", "AWDT": "AWDT", "AWST": "AWST", "BOT": "BOT", "BT": "BT", "CAT": "CAT", "CDT": "उत्तरी अमेरिकी केंद्रीय डेलाइट समय", "CHADT": "CHADT", "CHAST": "CHAST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "उत्तरी अमेरिकी केंद्रीय मानक समय", "ChST": "ChST", "EAT": "EAT", "ECT": "ECT", "EDT": "उत्तरी अमेरिकी पूर्वी डेलाइट समय", "EST": "उत्तरी अमेरिकी पूर्वी मानक समय", "GFT": "GFT", "GMT": "ग्रीनविच मीन टाइम", "GST": "GST", "GYT": "GYT", "HADT": "HADT", "HAST": "HAST", "HAT": "HAT", "HECU": "HECU", "HEEG": "HEEG", "HENOMX": "HENOMX", "HEOG": "HEOG", "HEPM": "HEPM", "HEPMX": "HEPMX", "HKST": "HKST", "HKT": "HKT", "HNCU": "HNCU", "HNEG": "HNEG", "HNNOMX": "HNNOMX", "HNOG": "HNOG", "HNPM": "HNPM", "HNPMX": "HNPMX", "HNT": "HNT", "IST": "IST", "JDT": "JDT", "JST": "JST", "LHDT": "LHDT", "LHST": "LHST", "MDT": "उत्तरी अमेरिकी माउंटेन डेलाइट समय", "MESZ": "मध्\u200dय यूरोपीय ग्रीष्\u200dमकालीन समय", "MEZ": "मध्य यूरोपीय मानक समय", "MST": "उत्तरी अमेरिकी माउंटेन मानक समय", "MYT": "MYT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "पूर्वी यूरोपीय ग्रीष्मकालीन समय", "OEZ": "पूर्वी यूरोपीय मानक समय", "PDT": "उत्तरी अमेरिकी प्रशांत डेलाइट समय", "PST": "उत्तरी अमेरिकी प्रशांत मानक समय", "SAST": "SAST", "SGT": "SGT", "SRT": "SRT", "TMST": "TMST", "TMT": "TMT", "UYST": "UYST", "UYT": "UYT", "VET": "VET", "WARST": "WARST", "WART": "WART", "WAST": "WAST", "WAT": "WAT", "WESZ": "पश्चिमी यूरोपीय ग्रीष्\u200dमकालीन समय", "WEZ": "पश्चिमी यूरोपीय मानक समय", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "∅∅∅": "∅∅∅"},
+		timezones:         map[string]string{"ACDT": "ACDT", "ACST": "ACST", "ACWDT": "ACWDT", "ACWST": "ACWST", "ADT": "अटलांटिक डेलाइट समय", "AEDT": "AEDT", "AEST": "AEST", "AKDT": "AKDT", "AKST": "AKST", "ARST": "ARST", "ART": "ART", "AST": "अटलांटिक मानक समय", "AWDT": "AWDT", "AWST": "AWST", "BOT": "BOT", "BT": "BT", "CAT": "CAT", "CDT": "उत्तरी अमेरिकी केंद्रीय डेलाइट समय", "CHADT": "CHADT", "CHAST": "CHAST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "उत्तरी अमेरिकी केंद्रीय मानक समय", "ChST": "ChST", "EAT": "EAT", "ECT": "ECT", "EDT": "उत्तरी अमेरिकी पूर्वी डेलाइट समय", "EST": "उत्तरी अमेरिकी पूर्वी मानक समय", "GFT": "GFT", "GMT": "ग्रीनविच मीन टाइम", "GST": "GST", "GYT": "GYT", "HADT": "HADT", "HAST": "HAST", "HAT": "HAT", "HECU": "HECU", "HEEG": "HEEG", "HENOMX": "HENOMX", "HEOG": "HEOG", "HEPM": "HEPM", "HEPMX": "HEPMX", "HKST": "HKST", "HKT": "HKT", "HNCU": "HNCU", "HNEG": "HNEG", "HNNOMX": "HNNOMX", "HNOG": "HNOG", "HNPM": "HNPM", "HNPMX": "HNPMX", "HNT": "HNT", "IST": "IST", "JDT": "JDT", "JST": "JST", "LHDT": "LHDT", "LHST": "LHST", "MDT": "MDT", "MESZ": "मध्\u200dय यूरोपीय ग्रीष्\u200dमकालीन समय", "MEZ": "मध्य यूरोपीय मानक समय", "MST": "MST", "MYT": "MYT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "पूर्वी यूरोपीय ग्रीष्मकालीन समय", "OEZ": "पूर्वी यूरोपीय मानक समय", "PDT": "उत्तरी अमेरिकी प्रशांत डेलाइट समय", "PST": "उत्तरी अमेरिकी प्रशांत मानक समय", "SAST": "SAST", "SGT": "SGT", "SRT": "SRT", "TMST": "TMST", "TMT": "TMT", "UYST": "UYST", "UYT": "UYT", "VET": "VET", "WARST": "WARST", "WART": "WART", "WAST": "WAST", "WAT": "WAT", "WESZ": "पश्चिमी यूरोपीय ग्रीष्\u200dमकालीन समय", "WEZ": "पश्चिमी यूरोपीय मानक समय", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "∅∅∅": "∅∅∅"},
 	}
 }
 

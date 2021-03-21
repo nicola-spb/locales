@@ -1,7 +1,7 @@
 package locales
 
 import (
-	"github.com/nicola-spb/locales/currency"
+	"locales/currency"
 	"strconv"
 	"time"
 

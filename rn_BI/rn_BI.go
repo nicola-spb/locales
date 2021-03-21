@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/nicola-spb/locales"
-	"github.com/nicola-spb/locales/currency"
+	"locales"
+	"locales/currency"
 )
 
 type rn_BI struct {
@@ -21,7 +21,7 @@ type rn_BI struct {
 	percentSuffix      string
 	perMille           string
 	timeSeparator      string
-	inifinity          string
+	infinity           string
 	currencies         []string // idx = enum of currency code
 	monthsAbbreviated  []string
 	monthsNarrow       []string

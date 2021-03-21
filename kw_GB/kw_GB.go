@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/nicola-spb/locales"
-	"github.com/nicola-spb/locales/currency"
+	"locales"
+	"locales/currency"
 )
 
 type kw_GB struct {
@@ -20,7 +20,7 @@ type kw_GB struct {
 	percent            string
 	perMille           string
 	timeSeparator      string
-	inifinity          string
+	infinity           string
 	currencies         []string // idx = enum of currency code
 	monthsAbbreviated  []string
 	monthsNarrow       []string
@@ -85,10 +85,10 @@ func (kw *kw_GB) PluralsRange() []locales.PluralRule {
 func (kw *kw_GB) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
+	nMod1000000 := math.Mod(n, 1000000)
 	nMod100 := math.Mod(n, 100)
 	nMod1000 := math.Mod(n, 1000)
 	nMod100000 := math.Mod(n, 100000)
-	nMod1000000 := math.Mod(n, 1000000)
 
 	if n == 0 {
 		return locales.PluralRuleZero
